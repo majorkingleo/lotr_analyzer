@@ -12,6 +12,9 @@
 #include <dbi.h>
 #include <thread>
 #include <chrono>
+#include "ImportMail.h"
+#include <unistd.h>
+#include <signal.h>
 
 using namespace Tools;
 using namespace std::chrono_literals;
@@ -110,8 +113,27 @@ static void insert_default_values()
 	// insert_config( "brightness", "0.02" );	
 }
 
+void my_handler(int s)
+{
+	APP.quit_request = true;
+	printf("Caught signal %d\n",s);
+}
+
+void setup_signal_handlers()
+{
+	struct sigaction sigIntHandler;
+
+	sigIntHandler.sa_handler = my_handler;
+	sigemptyset(&sigIntHandler.sa_mask);
+	sigIntHandler.sa_flags = 0;
+
+	sigaction(SIGINT, &sigIntHandler, NULL);
+}
+
 int main( int argc, char **argv )
 {
+	setup_signal_handlers();
+
 	Co co;
 
 	std::list<std::thread> threads;
@@ -263,17 +285,13 @@ int main( int argc, char **argv )
 
 		insert_default_values();
 
-		/*
-		threads.emplace_back([&cfg_pope_reacts]() {
-			FetchAnswers answers {};
-			answers.fetch_from_file( cfg_pope_reacts.answers.value );
+		
+		threads.emplace_back([]() {
 			auto token = APP.db.get_dispose_token();
-			answers.run();
-		});
-		*/
-
-
-		APP.quit_request = true;
+			ImportMail import_mail;
+			import_mail.run();			
+		});		
+		
 
 		for( auto & t : threads ) {
 			t.join();

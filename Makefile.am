@@ -7,6 +7,8 @@ lotr_analyzer_SOURCES=\
 		src/App.cc \
 		src/bindtypes.h \
 		src/bindtypes.cc \
+		src/ImportMail.h \
+		src/ImportMail.cc \
 		tools_config.h
 		
 AM_CPPFLAGS = -I$(top_srcdir)/tools \

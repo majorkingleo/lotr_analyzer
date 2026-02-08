@@ -9,6 +9,7 @@ public:
 
 	CONFIG_SIMPLE_DECLARE_STR( ImportDirectory );
 	CONFIG_SIMPLE_DECLARE_STR( mail2text );
+	CONFIG_SIMPLE_DECLARE_STR( reformime );
 
 public:
 	ConfigSectionMailImport( const std::string & name_, Configfile2 *config_file_ );
