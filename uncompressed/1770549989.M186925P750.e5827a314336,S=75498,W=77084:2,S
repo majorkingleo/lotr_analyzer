@@ -1,0 +1,1586 @@
+Delivered-To: <kingleo@borger.co.at>
+Return-Path: <hello@hoffer.cx>
+Received: from mail.borger.co.at ([192.168.203.5])
+	by mail.borger.co.at with LMTP
+	id YtMSCeVyiGkdAwAATXwMIw:P1
+	(envelope-from <hello@hoffer.cx>)
+	for <kingleo@borger.co.at>; Sun, 08 Feb 2026 11:26:29 +0000
+Received: from mail.borger.co.at ([192.168.203.5])
+	by mail.borger.co.at with LMTP
+	id YtMSCeVyiGkdAwAATXwMIw
+	(envelope-from <hello@hoffer.cx>)
+	for <kingleo@borger.co.at>; Sun, 08 Feb 2026 11:26:29 +0000
+Content-Type: multipart/alternative;
+ boundary="------------YzOTqHqw8O1mYSxMpYNt76vX"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hoffer.cx; s=dkim;
+	t=1770549988;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=tMoU3f0vQVNNs7f+za3qSF6VGkCQjYpjIHyWNDbhx2U=;
+	b=gP0PJ9gFiDU9t1HYrHc3ITD/bTNN/YFUvF9M0Zml/7m22St5/eutbq2qXjfezMIiQvty06
+	IusMqKw0o4R2CkWfvbPsgxtwfDcpxjYZgmJ8D82ptAInxZujRKB7+0UBOvK4h9XYYAKxhF
+	W8T5az5eP7jbJx4FP2kQkZ0qYCvHpcSvD9r/lNzTlEMVnUK+IBRdYIgtlNNIXjVJdKtxqn
+	gs9NciD3v8JKqi6zDxpys1wL+T0BjX1cecgFNVunO2LD6LdmM6NjucI5KpOpAAEGqNlUmU
+	vMIrRcBftZMtHr9GqA3oihXdlXmEWgjM5M7EM5bsf8NRavARf5YZ7+xdldxR5Q==
+Authentication-Results: mail.borger.co.at;
+	auth=pass smtp.mailfrom=hello@hoffer.cx
+Message-ID: <f51fba78-5993-4200-8bdc-409d23671f2b@hoffer.cx>
+Date: Sun, 8 Feb 2026 12:26:29 +0100
+MIME-Version: 1.0
+Subject: =?UTF-8?Q?Fwd=3A_Kinoprogramm_Graz_=2830=2E_J=C3=A4nner_-_5=2E_Febr?=
+ =?UTF-8?Q?uar_2026=29?=
+References: <815d5a10.AVUAAI0Cn6YAAAAAAAAAAAk52csAAAAAvswAAAAAABVqpgBpfRng@mailjet.com>
+Content-Language: en-US
+To: kino-info@borger.co.at
+From: Phil Hoffer <hello@hoffer.cx>
+In-Reply-To: <815d5a10.AVUAAI0Cn6YAAAAAAAAAAAk52csAAAAAvswAAAAAABVqpgBpfRng@mailjet.com>
+X-Forwarded-Message-Id: <815d5a10.AVUAAI0Cn6YAAAAAAAAAAAk52csAAAAAvswAAAAAABVqpgBpfRng@mailjet.com>
+X-Spamd-Bar: --
+
+This is a multi-part message in MIME format.
+--------------YzOTqHqw8O1mYSxMpYNt76vX
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+
+
+DI (FH) Phil Hoffer
+Kommunikations- und Editorial Design
++43 699 10582429 <tel:004369910582429>
+hello@hoffer.cx <mailto:hello@hoffer.cx>
+www.hoffer.cx <https://hoffer.cx>
+
+
+-------- Forwarded Message --------
+Subject: 	Kinoprogramm Graz (30. Jänner - 5. Februar 2026)
+Date: 	Fri, 30 Jan 2026 21:51:44 +0100
+From: 	Uncut Graz <kinoprogramm@uncut.at>
+To: 	jj Rotane <uncut@hoffer.cx>
+
+
+
+UNCUT-Graz: Das aktuelle Kinoprogramm
+Uncut Movies <https://www.uncut.at> 	
+
+
+      Kinoprogramm Graz
+
+
+        30. Jänner - 5. Februar 2026
+
+Wöchentlichens Kinoprogramm für jj Rotane 	Mein Profil 
+<https://www.uncut.at/community/user.php?user_id=949> Account verwalten 
+<https://www.uncut.at/community/setup.php>
+
+
+          Neu auf Uncut:
+
+Filmquiz zum Film „Ach, diese Lücke, diese entsetzliche Lücke“ 
+<https://www.uncut.at/quiz/>
+Primate – Verlosung <https://www.uncut.at/news/news.php?item_id=28686>
+Berlinale 2026 - Perspectives 
+<https://www.uncut.at/news/news.php?item_id=28685>
+
+
+      Neu im Kino: Woche 5
+
+Während Joachim in München das Schauspielhandwerk und seine Großeltern 
+studiert, wird andernorts ums nackte Überleben gekämpft – sei es auf 
+einer einsamen Insel, in Kabul oder gegen einen gemeingefährlichen Affen.
+ >> weiterlesen <https://www.uncut.at/news/news.php?item_id=28688>
+
+    *13 Tage, 13 Nächte*
+    <https://www.uncut.at/movies/film.php?movie_id=21753>
+
+    *Woodwalkers 2* <https://www.uncut.at/movies/film.php?movie_id=18992>
+
+    *Primate* <https://www.uncut.at/movies/film.php?movie_id=22840>
+
+    *Send Help* <https://www.uncut.at/movies/film.php?movie_id=21462>
+
+    *Die Stimme von Hind Rajab*
+    <https://www.uncut.at/movies/film.php?movie_id=22129>
+
+    *Ach, diese Lücke, diese entsetzliche Lücke*
+    <https://www.uncut.at/movies/film.php?movie_id=21388>
+
+    *Stoff – Ein Spitzengeschäft*
+    <https://www.uncut.at/movies/film.php?movie_id=23052>
+
+Leider kann es seitens der Kinos immer wieder zu kurzfristigen 
+Änderungen im Programm kommen. Immer das aktuelle Programm des Tages 
+findest du daher online unter https://www.uncut.at/graz/kinoprogramm/ 
+<https://www.uncut.at/graz/kinoprogramm/>
+
+*Annenhof Kino* <https://www.uncut.at/graz/uciannenhof/>**Tel. (0316) *7277*
+
+    *No Other Choice
+    <https://www.uncut.at/movies/film.php?movie_id=22122>* Do 19:15
+    ------------------------------------------------------------------------
+    *Melania <https://www.uncut.at/movies/film.php?movie_id=23055>* Fr
+    und Sa 20:15 (OV), So 20:00 (OV), Mo - Do 20:15 (OV)
+    ------------------------------------------------------------------------
+    *Woodwalkers 2
+    <https://www.uncut.at/movies/film.php?movie_id=18992>* Fr 16:00,
+    18:00, Sa 14:30, 16:45, 18:00, So 14:15, 16:30, 17:30, Mo - Do
+    16:45, 18:00
+    ------------------------------------------------------------------------
+    *Send Help <https://www.uncut.at/movies/film.php?movie_id=21462>* Fr
+    17:45 (3D OV), 20:30 (3D), Sa 17:00 (3D), 20:00 (OV), So 17:30,
+    20:00 (3D OV), Mo 17:45 (3D), 20:30 (3D OV), Di 17:45 (3D OV), 20:30
+    (3D), Mi 17:45 (3D), 20:30 (OV), Do 17:45 (3D OV), 20:30
+    ------------------------------------------------------------------------
+    *Die drei ??? - Todesinsel
+    <https://www.uncut.at/movies/film.php?movie_id=20495>* Fr 15:30,
+    17:15, Sa 15:15, 17:30, So 15:00, 17:15, Mo - Do 17:00
+    ------------------------------------------------------------------------
+    *Mercy <https://www.uncut.at/movies/film.php?movie_id=22685>* Fr
+    19:45 (3D OV), Sa 20:30 (3D), Mo 19:45 (3D), Di 19:45 (3D OV), Mi
+    19:45 (3D), Do 19:45 (3D OV)
+    ------------------------------------------------------------------------
+    *Hamnet <https://www.uncut.at/movies/film.php?movie_id=22792>* Fr
+    17:30 (OV), Sa 19:45 (OV), So 14:45, 19:30 (OV), Mo 19:30 (OV), Di
+    19:30, Mi 19:30 (OV), Do 19:30
+    ------------------------------------------------------------------------
+    *28 Years Later: The Bone Temple
+    <https://www.uncut.at/movies/film.php?movie_id=22064>* Fr 20:30
+    (OV), Sa 20:00 (OV), So 19:45 (OV), Di 20:00, Do 20:00 (OV)
+    ------------------------------------------------------------------------
+    *The Housemaid - Wenn sie wüsste
+    <https://www.uncut.at/movies/film.php?movie_id=21801>* Fr 17:15
+    (OV), 19:30, Sa 17:15, 20:15 (OV), So 17:00 (OV), 20:15, Mo 17:15,
+    19:45 (OV), Di 17:15 (OV), 19:45, Mi 17:15, 19:15 (OV), Do 17:15
+    (OV), 19:45
+    ------------------------------------------------------------------------
+    *Extrawurst <https://www.uncut.at/movies/film.php?movie_id=22599>*
+    Fr 18:15, Sa 19:45, So 18:15, Di 19:15
+    ------------------------------------------------------------------------
+    *Rental Family
+    <https://www.uncut.at/movies/film.php?movie_id=22054>* Mi 17:15 (OV)
+    ------------------------------------------------------------------------
+    *Greenland 2 <https://www.uncut.at/movies/film.php?movie_id=22602>*
+    Sa 17:30, So 18:00 (OV), 20:30 (OV), Mo 17:15, Di 17:15 (OV)
+    ------------------------------------------------------------------------
+    *Checker Tobi 3: Die heimliche Herrscherin der Erde
+    <https://www.uncut.at/movies/film.php?movie_id=22695>* Fr 15:30, Sa
+    15:45, So 14:00, 16:00, Di 17:00, Do 17:15
+    ------------------------------------------------------------------------
+    *Anaconda <https://www.uncut.at/movies/film.php?movie_id=21220>* Mo
+    20:00, Mi 17:30
+    ------------------------------------------------------------------------
+    *SpongeBob Schwammkopf: Piraten Ahoi!
+    <https://www.uncut.at/movies/film.php?movie_id=20647>* Fr 15:45, Sa
+    15:00, So 14:00, Do 17:00
+    ------------------------------------------------------------------------
+    *Avatar: Fire and Ash
+    <https://www.uncut.at/movies/film.php?movie_id=9003>* Fr 16:00,
+    19:30 (3D OV), Sa 16:45 (3D), 19:00 (3D OV), So 16:30 (OV), 18:45
+    (3D OV), Mo 19:00 (3D OV), Di 19:00 (OV), Mi 19:00 (3D), Do 19:00
+    (3D OV)
+    ------------------------------------------------------------------------
+    *Bibi Blocksberg - Das große Hexentreffen
+    <https://www.uncut.at/movies/film.php?movie_id=20769>* Sa 15:30
+    ------------------------------------------------------------------------
+    *Zoomania 2 <https://www.uncut.at/movies/film.php?movie_id=20002>*
+    Fr 17:00, Sa 14:45, So 14:15, 16:00, Mo 17:00, 17:30 (OV), Di 17:30,
+    Do 17:30
+    ------------------------------------------------------------------------
+    *Pumuckl und das große Missverständnis
+    <https://www.uncut.at/movies/film.php?movie_id=20768>* Sa und So 14:30
+    ------------------------------------------------------------------------
+    *Chihiros Reise ins Zauberland
+    <https://www.uncut.at/movies/film.php?movie_id=464>* Sa 14:45, So
+    14:45 (OmU)
+    ------------------------------------------------------------------------
+    *Povratak Zikine dinastije
+    <https://www.uncut.at/movies/film.php?movie_id=22900>* Fr 20:15
+    (OmU), Sa 18:00 (OmU), So 20:15 (OmU), Mo 19:15 (OmU), Mi 20:00 (OmU)
+    ------------------------------------------------------------------------
+    *Iron Lung <https://www.uncut.at/movies/film.php?movie_id=23048>* Fr
+    20:00 (OV)
+    ------------------------------------------------------------------------
+
+*Atelier 12* <https://www.uncut.at/graz/atelier12/>**Tel. 
+(Münzgrabenstraße 24)
+
+    *Der Weichkäse
+    <https://www.uncut.at/movies/film.php?movie_id=23039>* Mi 19:15
+    (OmU) (Eintritt frei) (zusammen mit „Das Gastmahl der Liebe“)
+    ------------------------------------------------------------------------
+    *Das Gastmahl der Liebe
+    <https://www.uncut.at/movies/film.php?movie_id=23040>* Mi 19:15
+    (OmU) (Eintritt frei) (zusammen mit „Der Weichkäse“)
+    ------------------------------------------------------------------------
+
+*Cineplexx* <https://www.uncut.at/graz/cineplexx/>**Tel. (0316) *2909*
+
+    *Return to Silent Hill
+    <https://www.uncut.at/movies/film.php?movie_id=22841>* Do 18:15
+    (OV), 20:30
+    ------------------------------------------------------------------------
+    *13 Tage, 13 Nächte
+    <https://www.uncut.at/movies/film.php?movie_id=21753>* Fr 18:15, Sa
+    20:00, So 20:15, Mo 19:45, Di und Mi 20:00, Do 19:45
+    ------------------------------------------------------------------------
+    *Woodwalkers 2
+    <https://www.uncut.at/movies/film.php?movie_id=18992>* Fr 16:00,
+    18:30, Sa 14:45, 16:00, 18:15, So 14:15, 15:15, 17:30, Mo - Mi
+    15:45, 18:00, Do 16:00, 18:00
+    ------------------------------------------------------------------------
+    *Send Help <https://www.uncut.at/movies/film.php?movie_id=21462>* Fr
+    18:00, 20:30, Sa 18:00 (3D), 20:15, So 18:15 (3D), 20:30, Mo 18:00,
+    20:30 (3D), Di 18:00 (3D), 20:30 (3D), Mi 18:00 (3D), 20:30, Do
+    18:00, 20:15 (3D)
+    ------------------------------------------------------------------------
+    *Primate <https://www.uncut.at/movies/film.php?movie_id=22840>* Fr
+    20:15, Sa 18:15, 20:45, So 18:30, 20:30, Mo - Mi 20:15, Do 20:00
+    ------------------------------------------------------------------------
+    *Charlie - Der Superhund
+    <https://www.uncut.at/movies/film.php?movie_id=22960>* Fr 15:30, Sa
+    14:00, 16:15, So 16:15, Mo 15:30, Di 16:00, Mi und Do 15:30
+    ------------------------------------------------------------------------
+    *Die drei ??? - Todesinsel
+    <https://www.uncut.at/movies/film.php?movie_id=20495>* Fr 15:30,
+    17:45, Sa 14:45, 17:00, So 14:00, 15:00, 17:15, Mo - Do 15:30, 17:45
+    ------------------------------------------------------------------------
+    *Mercy <https://www.uncut.at/movies/film.php?movie_id=22685>* Fr
+    20:45 (3D), Sa 18:30, So und Mo 20:45, Di 20:15, Mi 20:00 (3D), Do
+    19:45 (3D)
+    ------------------------------------------------------------------------
+    *Die progressiven Nostalgiker
+    <https://www.uncut.at/movies/film.php?movie_id=22824>* Fr 18:15, Di
+    19:45
+    ------------------------------------------------------------------------
+    *28 Years Later: The Bone Temple
+    <https://www.uncut.at/movies/film.php?movie_id=22064>* Fr 20:30, So
+    19:45, Mo und Di 20:00, Mi 20:30 (MX4D), Do 20:15
+    ------------------------------------------------------------------------
+    *The Housemaid - Wenn sie wüsste
+    <https://www.uncut.at/movies/film.php?movie_id=21801>* Fr 17:30,
+    19:45, 20:15, Sa 15:00, 17:30, 19:15, 20:15, 21:00, So 18:00, 19:30
+    (OV), 20:00, Mo 17:15, 20:00, Di 17:15, 19:00 (OV), 20:00, Mi und Do
+    17:15, 20:00
+    ------------------------------------------------------------------------
+    *Extrawurst <https://www.uncut.at/movies/film.php?movie_id=22599>*
+    Fr 17:45, Sa 16:30, So 16:30, 18:15, Mo 19:45, Mi 19:45, Do 19:30
+    ------------------------------------------------------------------------
+    *Greenland 2 <https://www.uncut.at/movies/film.php?movie_id=22602>*
+    So und Mo 20:15, Mi 20:15
+    ------------------------------------------------------------------------
+    *Checker Tobi 3: Die heimliche Herrscherin der Erde
+    <https://www.uncut.at/movies/film.php?movie_id=22695>* Fr 15:30,
+    16:30, Sa und So 14:00, 16:00, Mo 16:15, Di 17:00, Mi und Do 16:00
+    ------------------------------------------------------------------------
+    *Anaconda <https://www.uncut.at/movies/film.php?movie_id=21220>* Fr
+    und Sa 16:45 (MX4D), Mo und Di 20:30 (MX4D), Do 17:30
+    ------------------------------------------------------------------------
+    *Song Sung Blue
+    <https://www.uncut.at/movies/film.php?movie_id=21697>* Di 17:15
+    ------------------------------------------------------------------------
+    *Der Medicus 2
+    <https://www.uncut.at/movies/film.php?movie_id=21802>* Mo 17:15, Do
+    17:00
+    ------------------------------------------------------------------------
+    *SpongeBob Schwammkopf: Piraten Ahoi!
+    <https://www.uncut.at/movies/film.php?movie_id=20647>* Fr 16:15, Sa
+    14:15, So 14:15, 16:15
+    ------------------------------------------------------------------------
+    *Avatar: Fire and Ash
+    <https://www.uncut.at/movies/film.php?movie_id=9003>* Fr 16:00 (IMAX
+    3D), 19:00 (3D MX4D), 20:00 (IMAX 3D), Sa 16:00 (IMAX 3D), 17:15
+    (3D), 19:00 (3D MX4D), 20:00 (IMAX 3D), So 14:30 (IMAX 3D), 15:15
+    (3D MX4D), 16:30, 18:15 (IMAX 3D), 19:00 (3D MX4D), Mo - Mi 15:30
+    (IMAX 3D), 16:45 (3D MX4D), 19:30 (IMAX 3D), Do 15:30 (IMAX 3D),
+    19:00 (3D MX4D), 19:30 (IMAX 3D)
+    ------------------------------------------------------------------------
+    *Zoomania 2 <https://www.uncut.at/movies/film.php?movie_id=20002>*
+    Fr 15:45, 17:30, Sa 14:15, 14:30 (3D MX4D), 15:15, 17:45, So 14:00,
+    15:00, 17:30, Mo 15:45, 17:30, Di 15:45, 18:00, Mi 15:45, 16:30,
+    19:15, Do 15:45, 16:45 (3D MX4D), 17:30
+    ------------------------------------------------------------------------
+    *Aufputzt is' <https://www.uncut.at/movies/film.php?movie_id=22489>*
+    Mo 17:30
+    ------------------------------------------------------------------------
+    *Wicked: Teil 2
+    <https://www.uncut.at/movies/film.php?movie_id=17412>* Mi 17:15 (DF+OmU)
+    ------------------------------------------------------------------------
+    *Die Unfassbaren 3 - Now You See Me
+    <https://www.uncut.at/movies/film.php?movie_id=21803>* Mo 18:15, Mi
+    18:00
+    ------------------------------------------------------------------------
+    *Pumuckl und das große Missverständnis
+    <https://www.uncut.at/movies/film.php?movie_id=20768>* Fr 15:45
+    ------------------------------------------------------------------------
+    *Chihiros Reise ins Zauberland
+    <https://www.uncut.at/movies/film.php?movie_id=464>* Di 17:00
+    ------------------------------------------------------------------------
+    *Alice im Wunderland: Dive in Wonderland
+    <https://www.uncut.at/movies/film.php?movie_id=22950>* Mi 17:30 (OmU)
+    ------------------------------------------------------------------------
+    *Iron Lung <https://www.uncut.at/movies/film.php?movie_id=23048>* Fr
+    und Sa 20:30 (OV), 20:45 (OV)
+    ------------------------------------------------------------------------
+
+*Filmzentrum im Rechbauerkino* 
+<https://www.uncut.at/graz/rechbauer/>**Tel. (0316) *83 05 08*
+
+    *Wise Women - Fünf Hebammen, fünf Kulturen
+    <https://www.uncut.at/movies/film.php?movie_id=22074>* Fr 18:15, Sa
+    18:00, So - Mi 18:15, Do 15:00
+    ------------------------------------------------------------------------
+    *Hamnet <https://www.uncut.at/movies/film.php?movie_id=22792>* Fr
+    16:00 (OmU), 20:00 (OmU), Sa 19:45 (OmU), So 16:00 (OmU), 20:00
+    (OmU), Mo 16:00 (OmU), Di 20:00 (OmU), Mi 16:00 (OmU), Do 16:45 (OmU)
+    ------------------------------------------------------------------------
+    *Ein einfacher Unfall
+    <https://www.uncut.at/movies/film.php?movie_id=21735>* So 14:00
+    (DF), Mi 20:00 (DF)
+    ------------------------------------------------------------------------
+    *Der Fremde <https://www.uncut.at/movies/film.php?movie_id=22114>*
+    Mo 20:00 (OmU)
+    ------------------------------------------------------------------------
+    *Das Geheimnis von Velázquez
+    <https://www.uncut.at/movies/film.php?movie_id=22595>* Di 16:30
+    ------------------------------------------------------------------------
+    *Andy Warhol's Dracula
+    <https://www.uncut.at/movies/film.php?movie_id=4235>* Sa 22:00 (OmU)
+    (Samstag Nacht)
+    ------------------------------------------------------------------------
+    *Eine Eins und eine Zwei
+    <https://www.uncut.at/movies/film.php?movie_id=20724>* Do 19:00 (OmU)
+    ------------------------------------------------------------------------
+
+*Geidorf Kunstkino* <https://www.uncut.at/graz/geidorf/>**Tel. (0316) 
+*32 10 03*
+
+    *No Other Choice
+    <https://www.uncut.at/movies/film.php?movie_id=22122>* Do 19:30
+    ------------------------------------------------------------------------
+    *Ach, diese Lücke, diese entsetzliche Lücke
+    <https://www.uncut.at/movies/film.php?movie_id=21388>* Fr 19:30, Sa
+    15:00, 19:30, So 15:30, 19:30, Mo 19:30, Di und Mi 19:45, Do 19:15
+    ------------------------------------------------------------------------
+    *Die Stimme von Hind Rajab
+    <https://www.uncut.at/movies/film.php?movie_id=22129>* Fr 20:00
+    (OmU), Sa 17:45 (OmU), So 18:15 (OmU), Mo 17:30 (OmU), Di und Mi
+    17:45 (OmU), Do 17:30 (OmU)
+    ------------------------------------------------------------------------
+    *Hamnet <https://www.uncut.at/movies/film.php?movie_id=22792>* Fr
+    19:45, Sa 19:45 (OmU), So 15:15, 19:45, Mo 19:45, Di 20:00 (OmU), Mi
+    20:00, Do 19:45
+    ------------------------------------------------------------------------
+    *Die progressiven Nostalgiker
+    <https://www.uncut.at/movies/film.php?movie_id=22824>* Fr und Sa
+    17:30, So 15:00, 17:45, Mo 17:45, Di und Mi 20:15, Do 17:45
+    ------------------------------------------------------------------------
+    *Im Schatten des Orangenbaums
+    <https://www.uncut.at/movies/film.php?movie_id=22701>* Sa 15:15, Di
+    und Mi 17:15
+    ------------------------------------------------------------------------
+    *Ein einfacher Unfall
+    <https://www.uncut.at/movies/film.php?movie_id=21735>* Sa 15:30, So
+    17:15
+    ------------------------------------------------------------------------
+    *Rental Family
+    <https://www.uncut.at/movies/film.php?movie_id=22054>* Fr 17:45, Sa
+    und So 20:15, Di und Mi 17:30, Do 17:00
+    ------------------------------------------------------------------------
+    *Der Fremde <https://www.uncut.at/movies/film.php?movie_id=22114>*
+    Fr 17:15
+    ------------------------------------------------------------------------
+    *Song Sung Blue
+    <https://www.uncut.at/movies/film.php?movie_id=21697>* Mo 19:00
+    ------------------------------------------------------------------------
+    *Therapie für Wikinger
+    <https://www.uncut.at/movies/film.php?movie_id=22134>* Sa 18:00
+    ------------------------------------------------------------------------
+    *Aufputzt is' <https://www.uncut.at/movies/film.php?movie_id=22489>*
+    Mo 17:00
+    ------------------------------------------------------------------------
+
+*KIZ RoyalKino* <https://www.uncut.at/graz/kizroyal/>**Tel. (0316) *82 
+11 86*
+
+    *No Other Choice
+    <https://www.uncut.at/movies/film.php?movie_id=22122>* Do 17:20
+    (OmU), 20:00 (OmU)
+    ------------------------------------------------------------------------
+    *Bon Voyage – Bis hierher und noch weiter
+    <https://www.uncut.at/movies/film.php?movie_id=22901>* Do 18:00 (OmU)
+    ------------------------------------------------------------------------
+    *Die Stimme von Hind Rajab
+    <https://www.uncut.at/movies/film.php?movie_id=22129>* Fr und Sa
+    18:45 (OmU), So 18:50 (OmU), Mo 18:15 (OmU), Di 16:40 (OmU), Mi
+    18:45 (OmeU), Do 16:20 (OmU)
+    ------------------------------------------------------------------------
+    *Stoff – Ein Spitzengeschäft
+    <https://www.uncut.at/movies/film.php?movie_id=23052>* Fr 18:30
+    (OmU), Sa 16:40 (OmU), So 17:00 (OmU), Mo - Mi 18:30 (OmU)
+    ------------------------------------------------------------------------
+    *Wise Women - Fünf Hebammen, fünf Kulturen
+    <https://www.uncut.at/movies/film.php?movie_id=22074>* Fr 16:40
+    (OmU), Sa 18:30 (OmU), So 15:00 (OmU), Di 18:45 (OmU), Mi 16:40
+    (OmU), Do 16:10 (OmU)
+    ------------------------------------------------------------------------
+    *White Snail <https://www.uncut.at/movies/film.php?movie_id=22466>*
+    Fr 20:20 (OmU), So 20:20 (OmU), Mi 20:20 (OmeU)
+    ------------------------------------------------------------------------
+    *Hamnet <https://www.uncut.at/movies/film.php?movie_id=22792>* Fr
+    17:30 (OmU), 20:00 (OV), Sa 17:30 (OmU), 20:00 (OmU), So 13:00
+    (OmU), 18:00 (OmU), Mo 17:30 (OmU), 20:00 (OmU), Di 17:30 (OmU),
+    20:00 (OV), Mi 17:30 (OmU), 20:00 (OmU), Do 18:15 (OmU)
+    ------------------------------------------------------------------------
+    *28 Years Later: The Bone Temple
+    <https://www.uncut.at/movies/film.php?movie_id=22064>* Fr und Sa
+    20:40 (OmU), So 20:40 (OV), Mo und Di 20:40 (OmU), Mi 20:40 (OV), Do
+    20:40 (OmU)
+    ------------------------------------------------------------------------
+    *Im Schatten des Orangenbaums
+    <https://www.uncut.at/movies/film.php?movie_id=22701>* Fr 16:00
+    (OmU), Di 16:00 (OmU)
+    ------------------------------------------------------------------------
+    *Ein einfacher Unfall
+    <https://www.uncut.at/movies/film.php?movie_id=21735>* So 11:30
+    (OmU), Mo 16:10 (OmU), Mi 16:30 (OmU)
+    ------------------------------------------------------------------------
+    *Der Fremde <https://www.uncut.at/movies/film.php?movie_id=22114>*
+    Sa 16:20 (OmU), Mo 15:00 (OmU), Do 20:20 (OmU)
+    ------------------------------------------------------------------------
+    *Therapie für Wikinger
+    <https://www.uncut.at/movies/film.php?movie_id=22134>* Sa 15:20
+    (OmU), Mo 20:20 (OmU)
+    ------------------------------------------------------------------------
+    *Leibniz – Chronik eines verschollenen Bildes
+    <https://www.uncut.at/movies/film.php?movie_id=20971>* Mo 16:00
+    ------------------------------------------------------------------------
+    *Elements Of(f) Balance
+    <https://www.uncut.at/movies/film.php?movie_id=22408>* Fr 15:30 (OmU)
+    ------------------------------------------------------------------------
+    *Der Herr der Ringe: Die Rückkehr des Königs
+    <https://www.uncut.at/movies/film.php?movie_id=483>* So 10:00 (OV)
+    (Triple Feature - zusammen mit den anderen beiden Teilen)
+    ------------------------------------------------------------------------
+    *Chihiros Reise ins Zauberland
+    <https://www.uncut.at/movies/film.php?movie_id=464>* Sa 20:20 (OmU),
+    Di 20:20 (OmU)
+    ------------------------------------------------------------------------
+    *Der Herr der Ringe: Die zwei Türme
+    <https://www.uncut.at/movies/film.php?movie_id=108>* So 10:00 (OV)
+    (Triple Feature - zusammen mit den anderen beiden Teilen)
+    ------------------------------------------------------------------------
+    *Der Herr der Ringe: Die Gefährten
+    <https://www.uncut.at/movies/film.php?movie_id=107>* So 10:00 (OV)
+    (Triple Feature - zusammen mit den anderen beiden Teilen)
+    ------------------------------------------------------------------------
+    *Kino für die Kleinsten* So 11:00 (Laut und Leise)
+    ------------------------------------------------------------------------
+    *Ronja Räubertochter
+    <https://www.uncut.at/movies/film.php?movie_id=16107>* So 15:30
+    ------------------------------------------------------------------------
+
+*Schubert Kino* <https://www.uncut.at/graz/schubert/>**Tel. (0316) *82 
+90 81*
+
+    *Bon Voyage – Bis hierher und noch weiter
+    <https://www.uncut.at/movies/film.php?movie_id=22901>* Do 20:00
+    ------------------------------------------------------------------------
+    *Die drei ??? - Todesinsel
+    <https://www.uncut.at/movies/film.php?movie_id=20495>* 16:00, 18:15
+    ------------------------------------------------------------------------
+    *Extrawurst <https://www.uncut.at/movies/film.php?movie_id=22599>*
+    17:45, 20:15
+    ------------------------------------------------------------------------
+    *Checker Tobi 3: Die heimliche Herrscherin der Erde
+    <https://www.uncut.at/movies/film.php?movie_id=22695>* 15:45
+    ------------------------------------------------------------------------
+    *Der Medicus 2
+    <https://www.uncut.at/movies/film.php?movie_id=21802>* Fr - Mi 19:45
+    ------------------------------------------------------------------------
+    *Zoomania 2 <https://www.uncut.at/movies/film.php?movie_id=20002>* 15:30
+    ------------------------------------------------------------------------
+    *Aufputzt is' <https://www.uncut.at/movies/film.php?movie_id=22489>*
+    Fr - Mi 18:00, 20:00, Do 18:00, 19:45
+    ------------------------------------------------------------------------
+
+*Dieselkino Lieboch* <https://www.uncut.at/lieboch/dieselkino/>**Tel. 
+(03136) *62 62 0*
+
+    *Return to Silent Hill
+    <https://www.uncut.at/movies/film.php?movie_id=22841>* Do 20:45
+    ------------------------------------------------------------------------
+    *Woodwalkers 2
+    <https://www.uncut.at/movies/film.php?movie_id=18992>* Fr 16:30,
+    17:30, Sa 15:30, 17:30, So 16:00, 18:00, Mo - Do 17:00
+    ------------------------------------------------------------------------
+    *Send Help <https://www.uncut.at/movies/film.php?movie_id=21462>* Fr
+    und Sa 18:30, 20:45 (3D), So 18:30 (3D), 20:45, Mo 18:15, 20:30
+    (3D), Di 18:15, 19:30 (OV), 20:30 (3D), Mi und Do 18:15, 20:30 (3D)
+    ------------------------------------------------------------------------
+    *Primate <https://www.uncut.at/movies/film.php?movie_id=22840>* Fr
+    18:15, 20:00, Sa 17:15, 20:00, So 19:15, 21:00, Mo - Mi 20:45, Do 20:15
+    ------------------------------------------------------------------------
+    *Charlie - Der Superhund
+    <https://www.uncut.at/movies/film.php?movie_id=22960>* Fr 16:15, Sa
+    13:45, 15:45, So 14:00, 14:45, Mo 16:15, Di und Mi 16:30, Do 16:15
+    ------------------------------------------------------------------------
+    *Die drei ??? - Todesinsel
+    <https://www.uncut.at/movies/film.php?movie_id=20495>* Fr 16:45,
+    19:00, Sa 14:30, 16:30, 19:00, So 14:30, 16:30, Mo - Do 16:45
+    ------------------------------------------------------------------------
+    *Mercy <https://www.uncut.at/movies/film.php?movie_id=22685>* Fr und
+    Sa 21:00, So und Mo 20:00, Di 20:15, Mi 20:00, Do 19:45
+    ------------------------------------------------------------------------
+    *28 Years Later: The Bone Temple
+    <https://www.uncut.at/movies/film.php?movie_id=22064>* Fr und Sa
+    21:45, So 21:00, Di 18:00, Do 18:00
+    ------------------------------------------------------------------------
+    *The Housemaid - Wenn sie wüsste
+    <https://www.uncut.at/movies/film.php?movie_id=21801>* Fr und Sa
+    17:45, 20:15, So 16:45, 18:00, 20:30, Mo 17:45, 20:15, Di 17:30,
+    20:00, Mi 17:45, 20:15, Do 17:30, 20:00
+    ------------------------------------------------------------------------
+    *Extrawurst <https://www.uncut.at/movies/film.php?movie_id=22599>*
+    Fr und Sa 19:30, So 19:00, Mo - Do 18:45
+    ------------------------------------------------------------------------
+    *Greenland 2 <https://www.uncut.at/movies/film.php?movie_id=22602>*
+    Fr und Sa 21:30, So 20:15
+    ------------------------------------------------------------------------
+    *Checker Tobi 3: Die heimliche Herrscherin der Erde
+    <https://www.uncut.at/movies/film.php?movie_id=22695>* Fr 17:00, Sa
+    und So 14:15
+    ------------------------------------------------------------------------
+    *Song Sung Blue
+    <https://www.uncut.at/movies/film.php?movie_id=21697>* Mo 19:00, Mi
+    19:00
+    ------------------------------------------------------------------------
+    *SpongeBob Schwammkopf: Piraten Ahoi!
+    <https://www.uncut.at/movies/film.php?movie_id=20647>* Sa 15:00, So
+    13:45
+    ------------------------------------------------------------------------
+    *Avatar: Fire and Ash
+    <https://www.uncut.at/movies/film.php?movie_id=9003>* Fr 18:45 (3D),
+    Sa 16:00 (3D), 18:45 (3D), So 16:15 (3D), Mo - Do 18:30 (3D)
+    ------------------------------------------------------------------------
+    *Zoomania 2 <https://www.uncut.at/movies/film.php?movie_id=20002>*
+    Sa 16:15, So 15:45
+    ------------------------------------------------------------------------
+    *Aufputzt is' <https://www.uncut.at/movies/film.php?movie_id=22489>*
+    So 17:00, Mo 18:00, Mi 18:00
+    ------------------------------------------------------------------------
+    *Pumuckl und das große Missverständnis
+    <https://www.uncut.at/movies/film.php?movie_id=20768>* Sa 14:00, So
+    15:00, Mo 16:30, Do 16:30
+    ------------------------------------------------------------------------
+
+
+      Ab nächster Woche:
+
+    *Stray Kids: The dominATE Experience*
+    <https://www.uncut.at/movies/film.php?movie_id=22825>
+
+    *Ein Kuchen für den Präsidenten*
+    <https://www.uncut.at/movies/film.php?movie_id=21838>
+
+    *Bon Voyage – Bis hierher und noch weiter*
+    <https://www.uncut.at/movies/film.php?movie_id=22901>
+
+    *Wahrheit & Verrat - Truth & Treason*
+    <https://www.uncut.at/movies/film.php?movie_id=22679>
+
+    *Return to Silent Hill*
+    <https://www.uncut.at/movies/film.php?movie_id=22841>
+
+    *No Other Choice* <https://www.uncut.at/movies/film.php?movie_id=22122>
+
+*UNCUT* - Das Online-Kinomagazin
+A-8010 Graz, Klosterwiesgasse 17 - Tel. +43 / 680 / 557 6366
+www.uncut.at <https://www.uncut.at> office@uncut.at 
+<mailto:office@uncut.at>
+Um das wöchentliche Kinoprogramm abzubestellen oder die E-Mail-Adresse 
+zu ändern, geh bitte auf die Community-Seite 
+https://www.uncut.at/community/ <https://www.uncut.at/community/> und 
+ändere deine Daten oder verwende diesen direkten Link: vom Newsletter 
+abmelden 
+<https://www.uncut.at/community/newsletter.php?newsletter=kinoprogramm&token=58691afb0799464f9aebe22a6ef218ea&action=abmelden> 
+
+
+--------------YzOTqHqw8O1mYSxMpYNt76vX
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body text="#000000" bgcolor="#ffffff">
+    <br>
+    <br>
+    <div class="moz-signature">
+      <div
+style="text-align: left; font-family: Helvetica, Arial, sans-serif; font-size: 10px; line-height: 14px; font-weight: normal;">
+        <span
+style="color:#292c2c; font-weight: bold; font-style: italic; font-size: 11px; text-transform: uppercase;">DI
+          (FH) Phil Hoffer</span><br>
+        <span style="color:#8C8F8F;">Kommunikations- und Editorial
+          Design</span><br>
+        <a style="text-decoration: none;" href="tel:004369910582429"><span
+            style="color: #8C8F8F;">+43 699 10582429</span></a><br>
+        <a style="text-decoration: none;" href="mailto:hello@hoffer.cx"><span
+            style="color: #8C8F8F;">hello@hoffer.cx</span></a><br>
+        <a style="text-decoration: none;" href="https://hoffer.cx"><span
+            style="color: #505353;">www.hoffer.cx</span></a>
+      </div>
+    </div>
+    <div class="moz-forward-container"><br>
+      <br>
+      -------- Forwarded Message --------
+      <table cellpadding="0" cellspacing="0" border="0"
+        class="moz-email-headers-table">
+        <tbody>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Subject:
+            </th>
+            <td>Kinoprogramm Graz (30. Jänner - 5. Februar 2026)</td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Date: </th>
+            <td>Fri, 30 Jan 2026 21:51:44 +0100</td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">From: </th>
+            <td>Uncut Graz <a class="moz-txt-link-rfc2396E" href="mailto:kinoprogramm@uncut.at">&lt;kinoprogramm@uncut.at&gt;</a></td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">To: </th>
+            <td>jj Rotane <a class="moz-txt-link-rfc2396E" href="mailto:uncut@hoffer.cx">&lt;uncut@hoffer.cx&gt;</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <title>UNCUT-Graz: Das aktuelle Kinoprogramm</title>
+      <meta charset="utf-8">
+      <style type="text/css">body {
+margin-left: 0px;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+font-family: Helvetica, Arial, sans-serif;
+font-size: 14px;
+color: #333333;
+background:#ffffff;
+}a {
+color: #336699;
+}.linkw a {
+color: #ffffff;
+}h3 {
+font-size: 24px;
+line-height: 28px;
+padding: 0;
+color: #ffffff;
+margin: 0;
+font-weight: normal;
+font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+}h4 {
+font-size: 18px;
+padding: 0;
+color: #ffffff;
+margin: 0;
+font-weight: normal;
+font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+}h5 {
+font-size: 18px;
+padding: 0;
+margin: 0;
+color: #B3BFCC;
+font-weight: normal;
+font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 200;
+}hr {
+border-top: 1px solid #b8d1e9;
+border-width: 1px 0 0;
+height: 0;
+margin-top: 5px;
+padding-top: 0px;
+width: 100%;
+}</style>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td width="120" valign="top"
+background="https://www.uncut.at/traffic/email-hgunten.gif"
+              bgcolor="#5996c0"><a href="https://www.uncut.at"
+                moz-do-not-send="true"><img
+src="https://www.uncut.at/traffic/email-uncutlogo-unten.gif"
+                  alt="Uncut Movies" width="108" height="80" border="0"
+                  moz-do-not-send="true"></a></td>
+            <td class="linkw" bgcolor="#5996c0"
+background="https://www.uncut.at/traffic/email-hgunten.gif">
+              <h3>Kinoprogramm Graz</h3>
+              <h4>30. Jänner - 5. Februar 2026</h4>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="60" bgcolor="#d0e2eb"
+              style="padding:8px;font-size:12px;">Wöchentlichens
+              Kinoprogramm für jj Rotane</td>
+            <td width="60" align="right" bgcolor="#d0e2eb"
+              style="padding:8px;font-size:12px;"><a
+href="https://www.uncut.at/community/user.php?user_id=949"
+                moz-do-not-send="true"><font color="#336699">Mein Profil</font></a>
+                <a href="https://www.uncut.at/community/setup.php"
+                moz-do-not-send="true"><font color="#336699">Account
+                  verwalten</font></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" cellspacing="0" cellpadding="16" width="100%">
+        <tbody>
+          <tr>
+            <td>
+              <h5>Neu auf Uncut:</h5>
+              <font face="Arial" color="#000000">
+                <a href="https://www.uncut.at/quiz/"
+                  moz-do-not-send="true">Filmquiz zum Film „Ach, diese
+                  Lücke, diese entsetzliche Lücke“</a><br>
+                <a
+href="https://www.uncut.at/news/news.php?item_id=28686"
+                  moz-do-not-send="true">Primate – Verlosung</a><br>
+                <a
+href="https://www.uncut.at/news/news.php?item_id=28685"
+                  moz-do-not-send="true">Berlinale 2026 - Perspectives</a>
+              </font></td>
+          </tr>
+          <tr>
+            <td bgcolor="#2f88b0">
+              <h3>Neu im Kino: Woche 5</h3>
+              <font color="#ffffff">Während Joachim in München das
+                Schauspielhandwerk und seine Großeltern studiert, wird
+                andernorts ums nackte Überleben gekämpft – sei es auf
+                einer einsamen Insel, in Kabul oder gegen einen
+                gemeingefährlichen Affen.</font><br>
+              <a href="https://www.uncut.at/news/news.php?item_id=28688"
+                moz-do-not-send="true"><font color="#000000">&gt;&gt;
+                  weiterlesen</font></a>
+              <blockquote>
+                <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=21753"
+                    moz-do-not-send="true"><b><font face="Arial"
+                        color="#ffffff">13 Tage, 13 Nächte</font></b></a><br>
+                </p>
+                <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=18992"
+                    moz-do-not-send="true"><b><font face="Arial"
+                        color="#ffffff">Woodwalkers 2</font></b></a><br>
+                </p>
+                <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=22840"
+                    moz-do-not-send="true"><b><font face="Arial"
+                        color="#ffffff">Primate</font></b></a><br>
+                </p>
+                <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=21462"
+                    moz-do-not-send="true"><b><font face="Arial"
+                        color="#ffffff">Send Help</font></b></a><br>
+                </p>
+                <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=22129"
+                    moz-do-not-send="true"><b><font face="Arial"
+                        color="#ffffff">Die Stimme von Hind Rajab</font></b></a><br>
+                </p>
+                <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=21388"
+                    moz-do-not-send="true"><b><font face="Arial"
+                        color="#ffffff">Ach, diese Lücke, diese
+                        entsetzliche Lücke</font></b></a><br>
+                </p>
+                <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=23052"
+                    moz-do-not-send="true"><b><font face="Arial"
+                        color="#ffffff">Stoff – Ein Spitzengeschäft</font></b></a><br>
+                </p>
+              </blockquote>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size:11px;"><font face="Arial"
+                color="#999999">Leider kann es seitens der Kinos immer
+                wieder zu kurzfristigen Änderungen im Programm kommen.
+                Immer
+                das aktuelle Programm des Tages findest du daher online
+                unter <a href="https://www.uncut.at/graz/kinoprogramm/"
+                  moz-do-not-send="true"><font size="-1" face="Arial"
+                    color="#336699">https://www.uncut.at/graz/kinoprogramm/</font></a></font>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/graz/uciannenhof/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>Annenhof Kino</b></font></a><font
+          size="+1" face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(0316)
+        </font><font face="Arial"><b>7277</b></font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22122"
+              moz-do-not-send="true">No Other Choice</a></b> Do 19:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=23055"
+              moz-do-not-send="true">Melania</a></b> Fr und Sa 20:15
+          (OV), So 20:00 (OV), Mo - Do 20:15 (OV)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=18992"
+              moz-do-not-send="true">Woodwalkers 2</a></b> Fr 16:00,
+          18:00, Sa 14:30, 16:45, 18:00, So 14:15, 16:30, 17:30, Mo - Do
+          16:45, 18:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21462"
+              moz-do-not-send="true">Send Help</a></b> Fr 17:45 (3D OV),
+          20:30 (3D), Sa 17:00 (3D), 20:00 (OV), So 17:30, 20:00 (3D
+          OV), Mo 17:45 (3D), 20:30 (3D OV), Di 17:45 (3D OV), 20:30
+          (3D), Mi 17:45 (3D), 20:30 (OV), Do 17:45 (3D OV), 20:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20495"
+              moz-do-not-send="true">Die drei ??? - Todesinsel</a></b>
+          Fr 15:30, 17:15, Sa 15:15, 17:30, So 15:00, 17:15, Mo - Do
+          17:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22685"
+              moz-do-not-send="true">Mercy</a></b> Fr 19:45 (3D OV), Sa
+          20:30 (3D), Mo 19:45 (3D), Di 19:45 (3D OV), Mi 19:45 (3D), Do
+          19:45 (3D OV)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22792"
+              moz-do-not-send="true">Hamnet</a></b> Fr 17:30 (OV), Sa
+          19:45 (OV), So 14:45, 19:30 (OV), Mo 19:30 (OV), Di 19:30, Mi
+          19:30 (OV), Do 19:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22064"
+              moz-do-not-send="true">28 Years Later: The Bone Temple</a></b>
+          Fr 20:30 (OV), Sa 20:00 (OV), So 19:45 (OV), Di 20:00, Do
+          20:00 (OV)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21801"
+              moz-do-not-send="true">The Housemaid - Wenn sie wüsste</a></b>
+          Fr 17:15 (OV), 19:30, Sa 17:15, 20:15 (OV), So 17:00 (OV),
+          20:15, Mo 17:15, 19:45 (OV), Di 17:15 (OV), 19:45, Mi 17:15,
+          19:15 (OV), Do 17:15 (OV), 19:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22599"
+              moz-do-not-send="true">Extrawurst</a></b> Fr 18:15, Sa
+          19:45, So 18:15, Di 19:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22054"
+              moz-do-not-send="true">Rental Family</a></b> Mi 17:15 (OV)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22602"
+              moz-do-not-send="true">Greenland 2</a></b> Sa 17:30, So
+          18:00 (OV), 20:30 (OV), Mo 17:15, Di 17:15 (OV)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22695"
+              moz-do-not-send="true">Checker Tobi 3: Die heimliche
+              Herrscherin der Erde</a></b> Fr 15:30, Sa 15:45, So 14:00,
+          16:00, Di 17:00, Do 17:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21220"
+              moz-do-not-send="true">Anaconda</a></b> Mo 20:00, Mi 17:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20647"
+              moz-do-not-send="true">SpongeBob Schwammkopf: Piraten
+              Ahoi!</a></b> Fr 15:45, Sa 15:00, So 14:00, Do 17:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=9003"
+              moz-do-not-send="true">Avatar: Fire and Ash</a></b> Fr
+          16:00, 19:30 (3D OV), Sa 16:45 (3D), 19:00 (3D OV), So 16:30
+          (OV), 18:45 (3D OV), Mo 19:00 (3D OV), Di 19:00 (OV), Mi 19:00
+          (3D), Do 19:00 (3D OV)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20769"
+              moz-do-not-send="true">Bibi Blocksberg - Das große
+              Hexentreffen</a></b> Sa 15:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20002"
+              moz-do-not-send="true">Zoomania 2</a></b> Fr 17:00, Sa
+          14:45, So 14:15, 16:00, Mo 17:00, 17:30 (OV), Di 17:30, Do
+          17:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20768"
+              moz-do-not-send="true">Pumuckl und das große
+              Missverständnis</a></b> Sa und So 14:30<br>
+          <hr>
+          <b><a href="https://www.uncut.at/movies/film.php?movie_id=464"
+              moz-do-not-send="true">Chihiros Reise ins Zauberland</a></b>
+          Sa 14:45, So 14:45 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22900"
+              moz-do-not-send="true">Povratak Zikine dinastije</a></b>
+          Fr 20:15 (OmU), Sa 18:00 (OmU), So 20:15 (OmU), Mo 19:15
+          (OmU), Mi 20:00 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=23048"
+              moz-do-not-send="true">Iron Lung</a></b> Fr 20:00 (OV)<br>
+          <hr>
+        </font></blockquote>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/graz/atelier12/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>Atelier 12</b></font></a><font size="+1"
+          face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(Münzgrabenstraße 24)
+        </font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=23039"
+              moz-do-not-send="true">Der Weichkäse</a></b> Mi 19:15
+          (OmU) (Eintritt frei) (zusammen mit „Das Gastmahl der Liebe“)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=23040"
+              moz-do-not-send="true">Das Gastmahl der Liebe</a></b> Mi
+          19:15 (OmU) (Eintritt frei) (zusammen mit „Der Weichkäse“)<br>
+          <hr>
+        </font></blockquote>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/graz/cineplexx/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>Cineplexx</b></font></a><font size="+1"
+          face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(0316)
+        </font><font face="Arial"><b>2909</b></font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22841"
+              moz-do-not-send="true">Return to Silent Hill</a></b> Do
+          18:15 (OV), 20:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21753"
+              moz-do-not-send="true">13 Tage, 13 Nächte</a></b> Fr
+          18:15, Sa 20:00, So 20:15, Mo 19:45, Di und Mi 20:00, Do 19:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=18992"
+              moz-do-not-send="true">Woodwalkers 2</a></b> Fr 16:00,
+          18:30, Sa 14:45, 16:00, 18:15, So 14:15, 15:15, 17:30, Mo - Mi
+          15:45, 18:00, Do 16:00, 18:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21462"
+              moz-do-not-send="true">Send Help</a></b> Fr 18:00, 20:30,
+          Sa 18:00 (3D), 20:15, So 18:15 (3D), 20:30, Mo 18:00, 20:30
+          (3D), Di 18:00 (3D), 20:30 (3D), Mi 18:00 (3D), 20:30, Do
+          18:00, 20:15 (3D)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22840"
+              moz-do-not-send="true">Primate</a></b> Fr 20:15, Sa 18:15,
+          20:45, So 18:30, 20:30, Mo - Mi 20:15, Do 20:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22960"
+              moz-do-not-send="true">Charlie - Der Superhund</a></b> Fr
+          15:30, Sa 14:00, 16:15, So 16:15, Mo 15:30, Di 16:00, Mi und
+          Do 15:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20495"
+              moz-do-not-send="true">Die drei ??? - Todesinsel</a></b>
+          Fr 15:30, 17:45, Sa 14:45, 17:00, So 14:00, 15:00, 17:15, Mo -
+          Do 15:30, 17:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22685"
+              moz-do-not-send="true">Mercy</a></b> Fr 20:45 (3D), Sa
+          18:30, So und Mo 20:45, Di 20:15, Mi 20:00 (3D), Do 19:45 (3D)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22824"
+              moz-do-not-send="true">Die progressiven Nostalgiker</a></b>
+          Fr 18:15, Di 19:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22064"
+              moz-do-not-send="true">28 Years Later: The Bone Temple</a></b>
+          Fr 20:30, So 19:45, Mo und Di 20:00, Mi 20:30 (MX4D), Do 20:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21801"
+              moz-do-not-send="true">The Housemaid - Wenn sie wüsste</a></b>
+          Fr 17:30, 19:45, 20:15, Sa 15:00, 17:30, 19:15, 20:15, 21:00,
+          So 18:00, 19:30 (OV), 20:00, Mo 17:15, 20:00, Di 17:15, 19:00
+          (OV), 20:00, Mi und Do 17:15, 20:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22599"
+              moz-do-not-send="true">Extrawurst</a></b> Fr 17:45, Sa
+          16:30, So 16:30, 18:15, Mo 19:45, Mi 19:45, Do 19:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22602"
+              moz-do-not-send="true">Greenland 2</a></b> So und Mo
+          20:15, Mi 20:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22695"
+              moz-do-not-send="true">Checker Tobi 3: Die heimliche
+              Herrscherin der Erde</a></b> Fr 15:30, 16:30, Sa und So
+          14:00, 16:00, Mo 16:15, Di 17:00, Mi und Do 16:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21220"
+              moz-do-not-send="true">Anaconda</a></b> Fr und Sa 16:45
+          (MX4D), Mo und Di 20:30 (MX4D), Do 17:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21697"
+              moz-do-not-send="true">Song Sung Blue</a></b> Di 17:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21802"
+              moz-do-not-send="true">Der Medicus 2</a></b> Mo 17:15, Do
+          17:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20647"
+              moz-do-not-send="true">SpongeBob Schwammkopf: Piraten
+              Ahoi!</a></b> Fr 16:15, Sa 14:15, So 14:15, 16:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=9003"
+              moz-do-not-send="true">Avatar: Fire and Ash</a></b> Fr
+          16:00 (IMAX 3D), 19:00 (3D MX4D), 20:00 (IMAX 3D), Sa 16:00
+          (IMAX 3D), 17:15 (3D), 19:00 (3D MX4D), 20:00 (IMAX 3D), So
+          14:30 (IMAX 3D), 15:15 (3D MX4D), 16:30, 18:15 (IMAX 3D),
+          19:00 (3D MX4D), Mo - Mi 15:30 (IMAX 3D), 16:45 (3D MX4D),
+          19:30 (IMAX 3D), Do 15:30 (IMAX 3D), 19:00 (3D MX4D), 19:30
+          (IMAX 3D)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20002"
+              moz-do-not-send="true">Zoomania 2</a></b> Fr 15:45, 17:30,
+          Sa 14:15, 14:30 (3D MX4D), 15:15, 17:45, So 14:00, 15:00,
+          17:30, Mo 15:45, 17:30, Di 15:45, 18:00, Mi 15:45, 16:30,
+          19:15, Do 15:45, 16:45 (3D MX4D), 17:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22489"
+              moz-do-not-send="true">Aufputzt is'</a></b> Mo 17:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=17412"
+              moz-do-not-send="true">Wicked: Teil 2</a></b> Mi 17:15
+          (DF+OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21803"
+              moz-do-not-send="true">Die Unfassbaren 3 - Now You See Me</a></b>
+          Mo 18:15, Mi 18:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20768"
+              moz-do-not-send="true">Pumuckl und das große
+              Missverständnis</a></b> Fr 15:45<br>
+          <hr>
+          <b><a href="https://www.uncut.at/movies/film.php?movie_id=464"
+              moz-do-not-send="true">Chihiros Reise ins Zauberland</a></b>
+          Di 17:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22950"
+              moz-do-not-send="true">Alice im Wunderland: Dive in
+              Wonderland</a></b> Mi 17:30 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=23048"
+              moz-do-not-send="true">Iron Lung</a></b> Fr und Sa 20:30
+          (OV), 20:45 (OV)<br>
+          <hr>
+        </font></blockquote>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/graz/rechbauer/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>Filmzentrum im Rechbauerkino</b></font></a><font
+          size="+1" face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(0316)
+        </font><font face="Arial"><b>83 05 08</b></font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22074"
+              moz-do-not-send="true">Wise Women - Fünf Hebammen, fünf
+              Kulturen</a></b> Fr 18:15, Sa 18:00, So - Mi 18:15, Do
+          15:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22792"
+              moz-do-not-send="true">Hamnet</a></b> Fr 16:00 (OmU),
+          20:00 (OmU), Sa 19:45 (OmU), So 16:00 (OmU), 20:00 (OmU), Mo
+          16:00 (OmU), Di 20:00 (OmU), Mi 16:00 (OmU), Do 16:45 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21735"
+              moz-do-not-send="true">Ein einfacher Unfall</a></b> So
+          14:00 (DF), Mi 20:00 (DF)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22114"
+              moz-do-not-send="true">Der Fremde</a></b> Mo 20:00 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22595"
+              moz-do-not-send="true">Das Geheimnis von Velázquez</a></b>
+          Di 16:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=4235"
+              moz-do-not-send="true">Andy Warhol's Dracula</a></b> Sa
+          22:00 (OmU) (Samstag Nacht)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20724"
+              moz-do-not-send="true">Eine Eins und eine Zwei</a></b> Do
+          19:00 (OmU)<br>
+          <hr>
+        </font></blockquote>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/graz/geidorf/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>Geidorf Kunstkino</b></font></a><font
+          size="+1" face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(0316)
+        </font><font face="Arial"><b>32 10 03</b></font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22122"
+              moz-do-not-send="true">No Other Choice</a></b> Do 19:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21388"
+              moz-do-not-send="true">Ach, diese Lücke, diese
+              entsetzliche Lücke</a></b> Fr 19:30, Sa 15:00, 19:30, So
+          15:30, 19:30, Mo 19:30, Di und Mi 19:45, Do 19:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22129"
+              moz-do-not-send="true">Die Stimme von Hind Rajab</a></b>
+          Fr 20:00 (OmU), Sa 17:45 (OmU), So 18:15 (OmU), Mo 17:30
+          (OmU), Di und Mi 17:45 (OmU), Do 17:30 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22792"
+              moz-do-not-send="true">Hamnet</a></b> Fr 19:45, Sa 19:45
+          (OmU), So 15:15, 19:45, Mo 19:45, Di 20:00 (OmU), Mi 20:00, Do
+          19:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22824"
+              moz-do-not-send="true">Die progressiven Nostalgiker</a></b>
+          Fr und Sa 17:30, So 15:00, 17:45, Mo 17:45, Di und Mi 20:15,
+          Do 17:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22701"
+              moz-do-not-send="true">Im Schatten des Orangenbaums</a></b>
+          Sa 15:15, Di und Mi 17:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21735"
+              moz-do-not-send="true">Ein einfacher Unfall</a></b> Sa
+          15:30, So 17:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22054"
+              moz-do-not-send="true">Rental Family</a></b> Fr 17:45, Sa
+          und So 20:15, Di und Mi 17:30, Do 17:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22114"
+              moz-do-not-send="true">Der Fremde</a></b> Fr 17:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21697"
+              moz-do-not-send="true">Song Sung Blue</a></b> Mo 19:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22134"
+              moz-do-not-send="true">Therapie für Wikinger</a></b> Sa
+          18:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22489"
+              moz-do-not-send="true">Aufputzt is'</a></b> Mo 17:00<br>
+          <hr>
+        </font></blockquote>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/graz/kizroyal/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>KIZ RoyalKino</b></font></a><font
+          size="+1" face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(0316)
+        </font><font face="Arial"><b>82 11 86</b></font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22122"
+              moz-do-not-send="true">No Other Choice</a></b> Do 17:20
+          (OmU), 20:00 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22901"
+              moz-do-not-send="true">Bon Voyage – Bis hierher und noch
+              weiter</a></b> Do 18:00 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22129"
+              moz-do-not-send="true">Die Stimme von Hind Rajab</a></b>
+          Fr und Sa 18:45 (OmU), So 18:50 (OmU), Mo 18:15 (OmU), Di
+          16:40 (OmU), Mi 18:45 (OmeU), Do 16:20 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=23052"
+              moz-do-not-send="true">Stoff – Ein Spitzengeschäft</a></b>
+          Fr 18:30 (OmU), Sa 16:40 (OmU), So 17:00 (OmU), Mo - Mi 18:30
+          (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22074"
+              moz-do-not-send="true">Wise Women - Fünf Hebammen, fünf
+              Kulturen</a></b> Fr 16:40 (OmU), Sa 18:30 (OmU), So 15:00
+          (OmU), Di 18:45 (OmU), Mi 16:40 (OmU), Do 16:10 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22466"
+              moz-do-not-send="true">White Snail</a></b> Fr 20:20 (OmU),
+          So 20:20 (OmU), Mi 20:20 (OmeU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22792"
+              moz-do-not-send="true">Hamnet</a></b> Fr 17:30 (OmU),
+          20:00 (OV), Sa 17:30 (OmU), 20:00 (OmU), So 13:00 (OmU), 18:00
+          (OmU), Mo 17:30 (OmU), 20:00 (OmU), Di 17:30 (OmU), 20:00
+          (OV), Mi 17:30 (OmU), 20:00 (OmU), Do 18:15 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22064"
+              moz-do-not-send="true">28 Years Later: The Bone Temple</a></b>
+          Fr und Sa 20:40 (OmU), So 20:40 (OV), Mo und Di 20:40 (OmU),
+          Mi 20:40 (OV), Do 20:40 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22701"
+              moz-do-not-send="true">Im Schatten des Orangenbaums</a></b>
+          Fr 16:00 (OmU), Di 16:00 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21735"
+              moz-do-not-send="true">Ein einfacher Unfall</a></b> So
+          11:30 (OmU), Mo 16:10 (OmU), Mi 16:30 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22114"
+              moz-do-not-send="true">Der Fremde</a></b> Sa 16:20 (OmU),
+          Mo 15:00 (OmU), Do 20:20 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22134"
+              moz-do-not-send="true">Therapie für Wikinger</a></b> Sa
+          15:20 (OmU), Mo 20:20 (OmU)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20971"
+              moz-do-not-send="true">Leibniz – Chronik eines
+              verschollenen Bildes</a></b> Mo 16:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22408"
+              moz-do-not-send="true">Elements Of(f) Balance</a></b> Fr
+          15:30 (OmU)<br>
+          <hr>
+          <b><a href="https://www.uncut.at/movies/film.php?movie_id=483"
+              moz-do-not-send="true">Der Herr der Ringe: Die Rückkehr
+              des Königs</a></b> So 10:00 (OV) (Triple Feature -
+          zusammen mit den anderen beiden Teilen)<br>
+          <hr>
+          <b><a href="https://www.uncut.at/movies/film.php?movie_id=464"
+              moz-do-not-send="true">Chihiros Reise ins Zauberland</a></b>
+          Sa 20:20 (OmU), Di 20:20 (OmU)<br>
+          <hr>
+          <b><a href="https://www.uncut.at/movies/film.php?movie_id=108"
+              moz-do-not-send="true">Der Herr der Ringe: Die zwei Türme</a></b>
+          So 10:00 (OV) (Triple Feature - zusammen mit den anderen
+          beiden Teilen)<br>
+          <hr>
+          <b><a href="https://www.uncut.at/movies/film.php?movie_id=107"
+              moz-do-not-send="true">Der Herr der Ringe: Die Gefährten</a></b>
+          So 10:00 (OV) (Triple Feature - zusammen mit den anderen
+          beiden Teilen)<br>
+          <hr>
+          <b>Kino für die Kleinsten</b> So 11:00 (Laut und Leise)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=16107"
+              moz-do-not-send="true">Ronja Räubertochter</a></b> So
+          15:30<br>
+          <hr>
+        </font></blockquote>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/graz/schubert/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>Schubert Kino</b></font></a><font
+          size="+1" face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(0316)
+        </font><font face="Arial"><b>82 90 81</b></font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22901"
+              moz-do-not-send="true">Bon Voyage – Bis hierher und noch
+              weiter</a></b> Do 20:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20495"
+              moz-do-not-send="true">Die drei ??? - Todesinsel</a></b>
+          16:00, 18:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22599"
+              moz-do-not-send="true">Extrawurst</a></b> 17:45, 20:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22695"
+              moz-do-not-send="true">Checker Tobi 3: Die heimliche
+              Herrscherin der Erde</a></b> 15:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21802"
+              moz-do-not-send="true">Der Medicus 2</a></b> Fr - Mi 19:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20002"
+              moz-do-not-send="true">Zoomania 2</a></b> 15:30<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22489"
+              moz-do-not-send="true">Aufputzt is'</a></b> Fr - Mi 18:00,
+          20:00, Do 18:00, 19:45<br>
+          <hr>
+        </font></blockquote>
+      <p style="margin-left:10px;"><a
+          href="https://www.uncut.at/lieboch/dieselkino/"
+          moz-do-not-send="true"><font size="+1" face="Arial"
+            color="#CC0000"><b>Dieselkino Lieboch</b></font></a><font
+          size="+1" face="Arial" color="#CC0000"><b>
+          </b></font><font face="Arial">Tel. </font><font face="Arial"
+          color="#999999">(03136)
+        </font><font face="Arial"><b>62 62 0</b></font></p>
+      <blockquote><font face="Arial">
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22841"
+              moz-do-not-send="true">Return to Silent Hill</a></b> Do
+          20:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=18992"
+              moz-do-not-send="true">Woodwalkers 2</a></b> Fr 16:30,
+          17:30, Sa 15:30, 17:30, So 16:00, 18:00, Mo - Do 17:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21462"
+              moz-do-not-send="true">Send Help</a></b> Fr und Sa 18:30,
+          20:45 (3D), So 18:30 (3D), 20:45, Mo 18:15, 20:30 (3D), Di
+          18:15, 19:30 (OV), 20:30 (3D), Mi und Do 18:15, 20:30 (3D)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22840"
+              moz-do-not-send="true">Primate</a></b> Fr 18:15, 20:00, Sa
+          17:15, 20:00, So 19:15, 21:00, Mo - Mi 20:45, Do 20:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22960"
+              moz-do-not-send="true">Charlie - Der Superhund</a></b> Fr
+          16:15, Sa 13:45, 15:45, So 14:00, 14:45, Mo 16:15, Di und Mi
+          16:30, Do 16:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20495"
+              moz-do-not-send="true">Die drei ??? - Todesinsel</a></b>
+          Fr 16:45, 19:00, Sa 14:30, 16:30, 19:00, So 14:30, 16:30, Mo -
+          Do 16:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22685"
+              moz-do-not-send="true">Mercy</a></b> Fr und Sa 21:00, So
+          und Mo 20:00, Di 20:15, Mi 20:00, Do 19:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22064"
+              moz-do-not-send="true">28 Years Later: The Bone Temple</a></b>
+          Fr und Sa 21:45, So 21:00, Di 18:00, Do 18:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21801"
+              moz-do-not-send="true">The Housemaid - Wenn sie wüsste</a></b>
+          Fr und Sa 17:45, 20:15, So 16:45, 18:00, 20:30, Mo 17:45,
+          20:15, Di 17:30, 20:00, Mi 17:45, 20:15, Do 17:30, 20:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22599"
+              moz-do-not-send="true">Extrawurst</a></b> Fr und Sa 19:30,
+          So 19:00, Mo - Do 18:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22602"
+              moz-do-not-send="true">Greenland 2</a></b> Fr und Sa
+          21:30, So 20:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22695"
+              moz-do-not-send="true">Checker Tobi 3: Die heimliche
+              Herrscherin der Erde</a></b> Fr 17:00, Sa und So 14:15<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=21697"
+              moz-do-not-send="true">Song Sung Blue</a></b> Mo 19:00, Mi
+          19:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20647"
+              moz-do-not-send="true">SpongeBob Schwammkopf: Piraten
+              Ahoi!</a></b> Sa 15:00, So 13:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=9003"
+              moz-do-not-send="true">Avatar: Fire and Ash</a></b> Fr
+          18:45 (3D), Sa 16:00 (3D), 18:45 (3D), So 16:15 (3D), Mo - Do
+          18:30 (3D)<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20002"
+              moz-do-not-send="true">Zoomania 2</a></b> Sa 16:15, So
+          15:45<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=22489"
+              moz-do-not-send="true">Aufputzt is'</a></b> So 17:00, Mo
+          18:00, Mi 18:00<br>
+          <hr>
+          <b><a
+              href="https://www.uncut.at/movies/film.php?movie_id=20768"
+              moz-do-not-send="true">Pumuckl und das große
+              Missverständnis</a></b> Sa 14:00, So 15:00, Mo 16:30, Do
+          16:30<br>
+          <hr>
+        </font></blockquote>
+      <font face="Arial">
+        <table border="0" bgcolor="#acc4d3" cellspacing="0"
+          cellpadding="12" width="100%">
+          <tbody>
+            <tr>
+              <td>
+                <h3>Ab nächster Woche:</h3>
+                <blockquote>
+                  <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=22825"
+                      moz-do-not-send="true"><b><font face="Arial">Stray
+                          Kids: The dominATE Experience</font></b></a><br>
+                  </p>
+                  <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=21838"
+                      moz-do-not-send="true"><b><font face="Arial">Ein
+                          Kuchen für den Präsidenten</font></b></a><br>
+                  </p>
+                  <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=22901"
+                      moz-do-not-send="true"><b><font face="Arial">Bon
+                          Voyage – Bis hierher und noch weiter</font></b></a><br>
+                  </p>
+                  <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=22679"
+                      moz-do-not-send="true"><b><font face="Arial">Wahrheit
+                          &amp; Verrat - Truth &amp; Treason</font></b></a><br>
+                  </p>
+                  <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=22841"
+                      moz-do-not-send="true"><b><font face="Arial">Return
+                          to Silent Hill</font></b></a><br>
+                  </p>
+                  <p><a
+href="https://www.uncut.at/movies/film.php?movie_id=22122"
+                      moz-do-not-send="true"><b><font face="Arial">No
+                          Other Choice</font></b></a><br>
+                  </p>
+                </blockquote>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </font>
+      <table width="100%" border="0" cellspacing="0" cellpadding="8">
+        <tbody>
+          <tr>
+            <td bgcolor="#5996c0" class="linkw"
+background="https://www.uncut.at/traffic/email-hgunten.gif"
+              style="padding-left:20px;"><font color="#99abb8"><b>UNCUT</b>
+                - Das Online-Kinomagazin<br>
+                A-8010 Graz, Klosterwiesgasse 17 - Tel. +43 / 680 / 557
+                6366<br>
+                <a href="https://www.uncut.at" moz-do-not-send="true"><font
+                    color="#ffffff">www.uncut.at</font></a>       <a
+                  href="mailto:office@uncut.at" moz-do-not-send="true"><font
+                    color="#ffffff">office@uncut.at</font></a></font></td>
+          </tr>
+          <tr>
+            <td style="padding-left:20px;color:#666666;font-size:12px;">Um
+              das wöchentliche Kinoprogramm abzubestellen oder die
+              E-Mail-Adresse zu ändern,
+              geh bitte auf die Community-Seite <a
+                href="https://www.uncut.at/community/"
+                moz-do-not-send="true"><font color="#000000">https://www.uncut.at/community/</font></a>
+              und ändere deine Daten oder verwende diesen direkten Link:
+              <a
+href="https://www.uncut.at/community/newsletter.php?newsletter=kinoprogramm&amp;token=58691afb0799464f9aebe22a6ef218ea&amp;action=abmelden"
+                moz-do-not-send="true"><font color="#000000">v</font><font
+                  face="Arial" color="#000000">om Newsletter abmelden</font></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+--------------YzOTqHqw8O1mYSxMpYNt76vX--

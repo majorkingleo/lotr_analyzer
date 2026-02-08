@@ -1,0 +1,193 @@
+Delivered-To: <kingleo@borger.co.at>
+Return-Path: <SRS0=g94G=AM=gmx.at=kingleo@borger.co.at>
+Received: from mail.borger.co.at ([192.168.203.5])
+	by mail.borger.co.at with LMTP
+	id 17K7IAJsiGkmAQAATXwMIw:P1
+	(envelope-from <SRS0=g94G=AM=gmx.at=kingleo@borger.co.at>)
+	for <kingleo@borger.co.at>; Sun, 08 Feb 2026 10:57:06 +0000
+Received: from mail.borger.co.at ([192.168.203.5])
+	by mail.borger.co.at with LMTP
+	id 17K7IAJsiGkmAQAATXwMIw
+	(envelope-from <SRS0=g94G=AM=gmx.at=kingleo@borger.co.at>)
+	for <kingleo@borger.co.at>; Sun, 08 Feb 2026 10:57:06 +0000
+Received: from mout.gmx.net (mout.gmx.net [212.227.17.20])
+	by mail.borger.co.at (Postfix) with ESMTP id 76660A080F
+	for <kino-info@borger.co.at>; Sun, 08 Feb 2026 10:57:05 +0000 (UTC)
+Authentication-Results: mail.borger.co.at;
+	dkim=pass header.d=gmx.at header.s=s31663417 header.b=pbm5lx5L;
+	spf=pass (mail.borger.co.at: domain of kingleo@gmx.at designates 212.227.17.20 as permitted sender) smtp.mailfrom=kingleo@gmx.at;
+	dmarc=pass (policy=quarantine) header.from=gmx.at
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=borger.co.at;
+	s=dkim; t=1770548225;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 dkim-signature; bh=x4dg+wkZTpX7RAJTM4use4SycMXH1RUwE3s59zMUoDs=;
+	b=v5po2vrf9n3wfS6X7zJxPoWu2mvkkT0wbSAtr2yU9ZaIGn0xUXWc2i6d8lw0adNCC25Kgq
+	h9qibZN+QCScyMLluwGzli/t6tqcAdeCWFGuER3fSYxf1Ovw166QsICaalHgZCxhwNleHe
+	fY+OHXo9gUkhZEe+QN52qn9lalUXUdwEWSsaXsdaaAr+44rHym0078tVFvQppe0nZVAVTT
+	aUT9HUeA0fYytfsmvfAqeVmVD+trjR4M3uJYU8xSJlqRTXjHrHk1tBmxTcZHw6pPBui3LI
+	2X/QRerEeNZ7Ki/CINi0ErDaQAorRiLUgKBkTNw5LNZ13OV6AIBM5t5mcaIV0g==
+ARC-Authentication-Results: i=1;
+	mail.borger.co.at;
+	dkim=pass header.d=gmx.at header.s=s31663417 header.b=pbm5lx5L;
+	spf=pass (mail.borger.co.at: domain of kingleo@gmx.at designates 212.227.17.20 as permitted sender) smtp.mailfrom=kingleo@gmx.at;
+	dmarc=pass (policy=quarantine) header.from=gmx.at
+ARC-Seal: i=1; s=dkim; d=borger.co.at; t=1770548225; a=rsa-sha256;
+	cv=none;
+	b=K1hHE/sM6l1F/zA/d+Lz4kJr6X9KhTWCOulYEXw6/UBP1s1OWAtdTR8Lj4yN1bXeWlUAHL
+	cEZfwHraxlw0NgShWUnMKqfr5TrOK4SUj5GS4lUXjQ6bkD+xg9/g0ESpzAcB4Y7hQkKCeC
+	5ehc6Nq80QCbQSoCUCV3+H73820CIZ0a+6QT7kit/Nh+BlZwxOS0fAyoCzDdnKHqKKi+z3
+	Do0h3t0yEyoCfv38F0iMrtBTCVr646pvcdat308E409EZ8vxWdpr/VdCOsdkRgSgjqWlR0
+	vDOEnivYS25yA9p4jxsOptbLpEkhyxyjqUj+t6Vgtd685LZdcg23wu8DI8F+lw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.at;
+	s=s31663417; t=1770548224; x=1771153024; i=kingleo@gmx.at;
+	bh=x4dg+wkZTpX7RAJTM4use4SycMXH1RUwE3s59zMUoDs=;
+	h=X-UI-Sender-Class:Message-ID:Subject:From:To:Date:Content-Type:
+	 MIME-Version:cc:content-transfer-encoding:content-type:date:from:
+	 message-id:mime-version:reply-to:subject:to;
+	b=pbm5lx5LkcAL9DaUfIgKIvwAKEQm98Uh8pDFSzLlZ77ew6TlJ2YzVGAJIBdzvUaL
+	 dr3wNl+a5H3qiBabU1WGzOjXp0Eej68svWFYpYak4uJw8IbRDc6WKCqOeFI7RJ3nW
+	 AYy7mIlr0D0DWyBZrsHOSjsudEsQQk7fVKjE1QJjLgALObTK8ECbLjJQcZe8DWl1/
+	 VQiOVb6sIOpXHO5wwTg7W4zUKk5jfEH2V5EWw6Iyp83CyP8ssxt02fxNZAzOrTMTY
+	 VReTzenE/FqaNMPRv4Qu3+Ixr6zS8i9SEXML8p9+83sjsRQD3q1UAXTDNQxfGP753
+	 TrgYcxeoicmRzNofWA==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from phenom.lan ([77.119.91.231]) by mail.gmx.net (mrgmx104
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1McpJq-1vGX0E1aWw-00lqzb for
+ <kino-info@borger.co.at>; Sun, 08 Feb 2026 11:57:04 +0100
+Message-ID: <a0c85a85e5becc492a0e164195bbc74d6118db6c.camel@gmx.at>
+Subject: test1
+From: Martin Oberzalek <kingleo@gmx.at>
+To: kino-info@borger.co.at
+Date: Sun, 08 Feb 2026 11:57:03 +0100
+Content-Type: multipart/alternative; boundary="=-COA8LInWZyhae+Xq228v"
+User-Agent: Evolution 3.58.2 
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:tBYsl2ep3Ut5VtjY+ybrg5IvpMgkfHlnH1YaAtZaOFfzK1IrtsQ
+ 7+vPxpG3l2t318GdjcEUkcrwqPmFC+GP/RTujj+xW22kW7KurSKeSWBbE/UGlx6WnMnONkq
+ 7cn/ebtQ9tjP200MyRVCN9LjVQq0uvsw9zTDVloNCk+fVj19W5/2kz6DXATfXbZyPGRRlQV
+ fipNjY4/7DRPOJo7WHQoA==
+X-Spam-Flag: NO
+UI-OutboundReport: notjunk:1;M01:P0:HbLbTJj2WxY=;tKpYUOc6qbeen/kqsI4eWOjpGDm
+ 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
+X-Spamd-Bar: +
+X-Spam-Level: *
+
+--=-COA8LInWZyhae+Xq228v
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+--=20
+
+
+2*Pi || !(2*Pi) this =3D=3D ?
+http://redeye.hoffer.cx/
+http://borger.co.at/
+
+--=-COA8LInWZyhae+Xq228v
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style>pre,code,address {
+  margin: 0px;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+ol,ul {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+blockquote {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+</style></head><body><div><br></div><div><span><pre>-- <br></pre>
+<style type=3D"text/css">
+p, li { white-space: pre-wrap; }
+</style>
+
+<style type=3D"text/css">
+p, li { white-space: pre-wrap; }
+</style>
+<div><!--StartFragment-->2*Pi || !(2*Pi) this =3D=3D ?<!--EndFragment--></d=
+iv><div><!--StartFragment--><a href=3D"http://redeye.hoffer.cx/">http://red=
+eye.hoffer.cx/</a></div>
+<div><a href=3D"http://borger.co.at/">http://borger.co.at/</a><!--EndFragme=
+nt--></div></span></div></body></html>
+
+--=-COA8LInWZyhae+Xq228v--
