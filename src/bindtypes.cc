@@ -158,6 +158,18 @@ SERMON::SERMON()
 
 }
 
+MAIL::MAIL()
+: BASE( "MAIL", this ),
+  from( this, "from", USER_NAME_LEN ),
+  to( this, "to", USER_NAME_LEN ),
+  subject( this, "subject", SUBJECT_LEN ),
+  body( this, "body", BODY_LEN ),
+  imap_filename( this, "imap_filename", FILE_LEN ),
+  checked( this, "checked" )
+{
+
+}
+
 static std::string create_sql_statement( DBBindType *table, std::vector< Ref<Forkey> > & forkeys, bool add_drop_table )
 {
   std::string s;
@@ -263,28 +275,20 @@ static std::string create_sql_statement( DBBindType *table, std::vector< Ref<For
 std::string create_sql( bool add_drop_table )
 {
   std::string s;
-  PLAY_QUEUE_CHUNKS 		play_queue_chunks;
-  PLAY_QUEUE_MUSIC 			play_queue_music;
-  PLAY_QUEUE_ANIMATION 		play_queue_animation;
-  BUTTON_QUEUE				button_queue;
-  USERS_ACTION				users_action;
   CONFIG					config;
-  STATS						stats;
-  SERMON					sermon;
-
-  P_PLAY_QUEUE_CHUNKS 		p_play_queue_chunks;
-  P_PLAY_QUEUE_MUSIC 		p_play_queue_music;
-  P_PLAY_QUEUE_ANIMATION 	p_play_queue_animation;
-  P_BUTTON_QUEUE			p_button_queue;
+  MAIL						mail;
 
   std::vector< Ref<Forkey> > forkeys;
 
+  s += create_sql_statement( &config,					forkeys, add_drop_table );
+  s += create_sql_statement( &mail,						forkeys, add_drop_table );
+/*
   s += create_sql_statement( &play_queue_chunks, 		forkeys, add_drop_table );
   s += create_sql_statement( &play_queue_music,  		forkeys, add_drop_table );
   s += create_sql_statement( &play_queue_animation,		forkeys, add_drop_table );
   s += create_sql_statement( &button_queue,				forkeys, add_drop_table );
   s += create_sql_statement( &users_action,				forkeys, add_drop_table );
-  s += create_sql_statement( &config,					forkeys, add_drop_table );
+    
   s += create_sql_statement( &stats,					forkeys, add_drop_table );
   s += create_sql_statement( &sermon,					forkeys, add_drop_table );
 
@@ -292,7 +296,7 @@ std::string create_sql( bool add_drop_table )
   s += create_sql_statement( &p_play_queue_music,		forkeys, add_drop_table );
   s += create_sql_statement( &p_play_queue_animation,	forkeys, add_drop_table );
   s += create_sql_statement( &p_button_queue,			forkeys, add_drop_table );
-
+*/
   // notwendige indexe anlegen
   for( unsigned i = 0; i < forkeys.size(); i++ )
 	{

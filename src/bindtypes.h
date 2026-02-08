@@ -4,11 +4,13 @@
 
 using namespace Tools;
 
-const unsigned USER_NAME_LEN=20;
-const unsigned PASSWORD_LEN=50;
+const unsigned USER_NAME_LEN=200;
+const unsigned SUBJECT_LEN=200;
+const unsigned BODY_LEN=2000;
+const unsigned FILE_LEN=1024;
+
 const unsigned TIME_LEN=19;
 const unsigned NAME_LEN=20;
-const unsigned FILE_LEN=1024;
 const unsigned MAC_ADDRESS_LEN=17;
 const unsigned IP_ADDRESS_LEN=15;
 const unsigned ACTION_LEN=50;
@@ -349,6 +351,26 @@ public:
 	{
 	  BASE::operator=(b);
 	  return *this;
+	}
+};
+
+class MAIL : public BASE
+{
+public:
+	DBTypeVarChar		from;
+	DBTypeVarChar		to;
+	DBTypeVarChar		subject;
+	DBTypeVarChar		body;
+	DBTypeVarChar		imap_filename;
+	DBTypeInt 			checked;
+
+public:
+	MAIL();
+
+	MAIL( const MAIL & b )
+	: MAIL()
+	{
+		BASE::operator=(b);
 	}
 };
 

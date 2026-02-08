@@ -205,7 +205,7 @@ int main( int argc, char **argv )
 			std::cout << create_sql( o_with_drop_table.getState() ) << std::endl;
 		}
 
-		Configfile2::createDefaultInstaceWithAllModules()->read(true);
+		Configfile2::createDefaultInstaceWithAllModules("~/.lotr-analyzer.ini")->read(true);
 		const ConfigSectionDatabase 	& cfg_db 			= Configfile2::get(ConfigSectionDatabase::KEY);
 	
 		std::chrono::steady_clock::time_point retry_logon_until{};

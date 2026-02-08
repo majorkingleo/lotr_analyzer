@@ -10,9 +10,9 @@ Configfile2::SectionKey<ConfigSectionDatabase> ConfigSectionDatabase::KEY( "data
 ConfigSectionDatabase::ConfigSectionDatabase( const std::string & name_, Configfile2 *config_file_ )
 : Section( name_, config_file_ ),
   Host( "host", "localhost" ),
-  UserName( "username", "broker" ),
-  Password( "password", "broker" ),
-  Instance( "instance", "pope" ),
+  UserName( "username", "lotr" ),
+  Password( "password", "lotr" ),
+  Instance( "instance", "lotr" ),
   retry_db_timeout( "retry_db_timeout", 60 )
 {
 	registerValue( &Host );
