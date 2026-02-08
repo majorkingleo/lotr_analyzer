@@ -107,4 +107,4 @@ dist
 mymoc.sh
 .test_case*
 
-broker*
+lotr_analyzer*
