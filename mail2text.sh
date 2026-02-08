@@ -187,7 +187,8 @@ print_sectionContent ()
       section_mimeType="text/html"
       if ((convHTMLToText)); then
          conv_report="text/plain-"$conv_report
-         data=$(convert_charset $1 |  skip_text | html2text -width "$HTMLtoText_width" | iconv -c -f "${conv_charset:-$section_charset}" -t "${conv_charset:-$section_charset}"; echo -n ";${PIPESTATUS[*]}") 
+         #data=$(convert_charset $1 |  skip_text | html2text -width "$HTMLtoText_width" | iconv -c -f "${conv_charset:-$section_charset}" -t "${conv_charset:-$section_charset}"; echo -n ";${PIPESTATUS[*]}") 
+         data=$(convert_charset $1 |  skip_text | iconv -c -f "${conv_charset:-$section_charset}" -t "${conv_charset:-$section_charset}"; echo -n ";${PIPESTATUS[*]}") 
       else
          data=$(convert_charset $1 | skip_text; echo -n ";${PIPESTATUS[*]}")
       fi
