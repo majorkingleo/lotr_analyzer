@@ -133,7 +133,8 @@ lotr_analyzer_LDADD = \
 	cpputils/io/libcpputilsio.a \
 	cpputils/cpputilsshared/libcpputilsshared.a \
 	cpputils/cpputilsshared/cpputilsformat/libcpputilsformat.a \
-	$(MYSQLCLIENT_LIBS)
+	$(MYSQLCLIENT_LIBS) \
+	-lmimetic
 
 LIBS=
     
