@@ -1,30 +1,12 @@
 bin_PROGRAMS=\
-	broker
+	lotr_analyzer
 	
-broker_SOURCES=\
+lotr_analyzer_SOURCES=\
 		src/main.cc \
-		src/PlaySound.h \
-		src/PlaySound.cc \
 		src/App.h \
 		src/App.cc \
 		src/bindtypes.h \
 		src/bindtypes.cc \
-		src/FetchSound.h \
-		src/FetchSound.cc \
-		src/ButtonListener.h \
-		src/ButtonListener.cc \
-		src/FetchButton.h \
-		src/FetchButton.cc \
-		src/PlayAnimation.h \
-		src/PlayAnimation.cc \
-		src/FetchAnimation.h \
-		src/FetchAnimation.cc \
-		src/FetchAnswers.h \
-		src/FetchAnswers.cc \
-		src/FetchStats.h \
-		src/FetchStats.cc \
-		src/AutoStopFog.h \
-		src/AutoStopFog.cc \
 		tools_config.h
 		
 AM_CPPFLAGS = -I$(top_srcdir)/tools \
@@ -37,7 +19,6 @@ AM_CPPFLAGS = -I$(top_srcdir)/tools \
 	-std=gnu++23 \
 	-fstack-protector \
 	-D_GLIBCXX_USE_CXX11_ABI=1 \
-	$(SDL2_MIXER_CFLAGS) \
 	$(MYSQLCLIENT_CFLAGS)
 
 noinst_LIBRARIES=cpputils/io/libcpputilsio.a \
@@ -66,13 +47,7 @@ config_libconfig_a_SOURCES= \
 		config/ConfigGlobal.h \
 		config/ConfigGlobal.cc \
 		config/ConfigDatabase.h \
-		config/ConfigDatabase.cc \
-		config/ConfigNetwork.h \
-		config/ConfigNetwork.cc \
-		config/ConfigAnimations.h \
-		config/ConfigAnimations.cc \
-		config/ConfigPopeReacts.h \
-		config/ConfigPopeReacts.cc
+		config/ConfigDatabase.cc
 
 cpputils_io_libcpputilsio_a_SOURCES= \
 	cpputils/io/ColoredOutput.h \
@@ -147,14 +122,13 @@ common_libcommon_a_SOURCES=\
 	common/ColBuilder.h \
 	common/ColBuilder.cc
 
-broker_LDADD = \
+lotr_analyzer_LDADD = \
 	common/libcommon.a \
 	config/libconfig.a \
 	db/libdb.a \
 	cpputils/io/libcpputilsio.a \
 	cpputils/cpputilsshared/libcpputilsshared.a \
 	cpputils/cpputilsshared/cpputilsformat/libcpputilsformat.a \
-	$(SDL2_MIXER_LIBS) \
 	$(MYSQLCLIENT_LIBS)
 
 LIBS=

@@ -32,7 +32,7 @@ AC_DEFUN([LD_FLAGS_CHECK],
 ])
 
 
-AC_INIT(broker, 0.0.1)
+AC_INIT(lotr_analyzer, 0.0.1)
 AM_INIT_AUTOMAKE([subdir-objects -Wall])
 AX_BOOST_BASE( 1.80 )
 
@@ -53,10 +53,6 @@ case $host_os in
 esac
 AM_CONDITIONAL([CYGWIN], [test x$cygwin = xtrue])
 
-
-# Check for SDL2_mixer module. 
-# NOTE: The prefix 'SDL2_MIXER' is what defines the output variables.
-PKG_CHECK_MODULES([SDL2_MIXER], [SDL2_mixer >= 2.0.0], [], [AC_MSG_ERROR([SDL2_mixer >= 2.0.0 not found])])
 
 PKG_CHECK_MODULES([MYSQLCLIENT], [mysqlclient], [], [AC_MSG_ERROR([mysqlclient not found])])
 
