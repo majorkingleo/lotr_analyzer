@@ -9,6 +9,8 @@ lotr_analyzer_SOURCES=\
 		src/bindtypes.cc \
 		src/ImportMail.h \
 		src/ImportMail.cc \
+		src/Grep4Data.h \
+		src/Grep4Data.cc \
 		tools_config.h
 		
 AM_CPPFLAGS = -I$(top_srcdir)/tools \

@@ -166,7 +166,9 @@ MAIL::MAIL()
   body_text_plain( this, "body_text_plain", BODY_LEN ),
   body_text_html( this, "body_text_html", BODY_LEN ),
   imap_filename( this, "imap_filename", FILE_LEN ),
-  checked( this, "checked" )
+  checked( this, "checked" ),
+  found( this, "found" ),
+  mailed( this, "mailed" )
 {
 
 }

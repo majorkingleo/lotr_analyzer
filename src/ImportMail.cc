@@ -152,6 +152,6 @@ void ImportMail::read_already_imported_files()
 
         for( int i = 0; i < count; i++ ) {
             m_imported_files.insert( filenames[i].imap_filename.data );
-        }        
-    }
+        }
+    } // while( true )
 }

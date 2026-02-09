@@ -15,6 +15,7 @@
 #include "ImportMail.h"
 #include <unistd.h>
 #include <signal.h>
+#include "Grep4Data.h"
 
 using namespace Tools;
 using namespace std::chrono_literals;
@@ -225,6 +226,7 @@ int main( int argc, char **argv )
 
 		if( o_create_sql.getState() ) {			
 			std::cout << create_sql( o_with_drop_table.getState() ) << std::endl;
+			return 0;
 		}
 
 		Configfile2::createDefaultInstaceWithAllModules("~/.lotr-analyzer.ini")->read(true);
@@ -296,6 +298,12 @@ int main( int argc, char **argv )
 			import_mail.run();			
 		});		
 		
+
+		threads.emplace_back([]() {
+			auto token = APP.db.get_dispose_token();
+			Grep4Data grep;
+			grep.run();			
+		});				
 
 		for( auto & t : threads ) {
 			t.join();

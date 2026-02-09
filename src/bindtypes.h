@@ -364,6 +364,8 @@ public:
 	DBTypeVarChar		body_text_html;
 	DBTypeVarChar		imap_filename;
 	DBTypeInt 			checked;
+	DBTypeInt 			found;
+	DBTypeInt 			mailed;
 
 public:
 	MAIL();
