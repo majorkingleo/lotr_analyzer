@@ -235,7 +235,7 @@ int main( int argc, char **argv )
 		retry_logon_until = std::chrono::steady_clock::now() + std::chrono::seconds(cfg_db.retry_db_timeout.value);
 
 
-		while( !APP.db ) {
+		while( !APP.db && !APP.quit_request ) {
 
 			APP.reconnect_db = [&cfg_db]() {
 				APP.db.connect( cfg_db.Host,
@@ -257,6 +257,10 @@ int main( int argc, char **argv )
 					continue;
 				}
 			}
+		}
+
+		if( APP.quit_request ) {
+			return 0;
 		}
 
 		/*

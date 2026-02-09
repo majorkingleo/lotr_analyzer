@@ -27,8 +27,8 @@ class DBType
       INT,
       VARCHAR,
       ENUM,
-	  DOUBLE,
-	  DATETIME,
+	    DOUBLE,
+	    DATETIME,
       LAST__
     };
   };

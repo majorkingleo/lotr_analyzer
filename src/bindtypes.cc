@@ -163,7 +163,8 @@ MAIL::MAIL()
   from( this, "from", USER_NAME_LEN ),
   to( this, "to", USER_NAME_LEN ),
   subject( this, "subject", SUBJECT_LEN ),
-  body( this, "body", BODY_LEN ),
+  body_text_plain( this, "body_text_plain", BODY_LEN ),
+  body_text_html( this, "body_text_html", BODY_LEN ),
   imap_filename( this, "imap_filename", FILE_LEN ),
   checked( this, "checked" )
 {

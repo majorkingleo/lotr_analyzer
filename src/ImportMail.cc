@@ -76,12 +76,8 @@ void ImportMail::process()
 }
 
 MAIL ImportMail::read_mail_from_file( const std::string & filename )
-{    
-    std::wstring content;
-
-    if( !m_read_file.read_file( filename, content ) ) {
-        throw std::runtime_error( Tools::format( "cannot read mail file '%s': %s", filename, m_read_file.getError() ) );
-    }
+{
+    File content( filename );
 
     MAIL mail{};
 
@@ -92,19 +88,26 @@ MAIL ImportMail::read_mail_from_file( const std::string & filename )
     mail.subject.data   = me.header().field( "Subject" ).value();
     mail.imap_filename.data = std::filesystem::path(filename).filename().string();
 
-    for( auto & part : me.body().parts() ) {
+    for( const auto & part : me.body().parts() ) {
 
-        CPPDEBUG( Tools::format( "processing part with content type '%s'", part->header().contentType().str() ) );
+        std::string content_type = part->header().contentType().str();        
+
+        CPPDEBUG( Tools::format( "processing part with content type '%s'", content_type ) );
 
         if( part->header().contentType().str().starts_with( "text/plain" ) ) {
-            mail.body.data = part->body();
+            mail.body_text_plain.data = part->body();
+            // CPPDEBUG( Tools::format( "found text/plain part in mail file '%s'", filename ) );
 
             // CPPDEBUG( Tools::format( "found text/plain part in mail file '%s'", filename ) );
             // CPPDEBUG( Tools::format( "mail body: '%s'", mail.body.data ) );
-        } /* else if( part->header().contentType().str().starts_with("text/html" ) ) {
+            // CPPDEBUG( Tools::wformat( L"mail body: '%s'", content ) );
+        } else if( part->header().contentType().str().starts_with("text/html" ) ) {
+            /*
             CPPDEBUG( Tools::format( "found text/html part in mail file '%s'", filename ) );
             CPPDEBUG( Tools::format( "mail body: '%s'", part->body() ) );
-        } */
+            */
+           mail.body_text_html.data = part->body();
+        } 
     }
 
     CPPDEBUG( Tools::format( "mail from '%s' to '%s' subject '%s'", mail.from.data, mail.to.data, mail.subject.data ) );

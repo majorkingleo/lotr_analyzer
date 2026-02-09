@@ -360,7 +360,8 @@ public:
 	DBTypeVarChar		from;
 	DBTypeVarChar		to;
 	DBTypeVarChar		subject;
-	DBTypeVarChar		body;
+	DBTypeVarChar		body_text_plain;
+	DBTypeVarChar		body_text_html;
 	DBTypeVarChar		imap_filename;
 	DBTypeInt 			checked;
 
