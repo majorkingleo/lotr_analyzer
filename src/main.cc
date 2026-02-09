@@ -3,7 +3,6 @@
 #include <OutDebug.h>
 #include <DetectLocale.h>
 #include <format.h>
-#include "PlaySound.h"
 #include "App.h"
 #include <filesystem>
 #include "Configfile2.h"
