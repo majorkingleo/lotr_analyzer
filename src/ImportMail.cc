@@ -46,7 +46,7 @@ void ImportMail::process()
 
                 const std::string imap_filename = std::filesystem::path(filename).filename().string();
                 if( m_imported_files.find( imap_filename ) != m_imported_files.end() ) {
-                    CPPDEBUG( Tools::format( "Mail file '%s' already imported, skipping", filename ) );
+                    CPPDEBUG( Tools::format( "Mail file '%s' already imported, skipping", imap_filename ) );
                     continue;
                 }
 
