@@ -59,68 +59,6 @@ void BASE::setHist( HIST_TYPE hist_type, const std::string & user )
   }
 }
 
-PLAY_QUEUE_CHUNKS::PLAY_QUEUE_CHUNKS()
-  : BASE( "PLAY_QUEUE_CHUNKS", this ),
-	file( this, "file", FILE_LEN )
-{}
-
-P_PLAY_QUEUE_CHUNKS::P_PLAY_QUEUE_CHUNKS()
-: PLAY_QUEUE_CHUNKS(),
-  sermon_reaction_idx( this, "sermon_reaction_idx" )
-{
-	set_table_name( "P_PLAY_QUEUE_CHUNKS" );
-}
-
-PLAY_QUEUE_MUSIC::PLAY_QUEUE_MUSIC()
-  : PLAY_QUEUE_CHUNKS()
-{
-	set_table_name( "PLAY_QUEUE_MUSIC" );
-}
-
-P_PLAY_QUEUE_MUSIC::P_PLAY_QUEUE_MUSIC()
-: PLAY_QUEUE_MUSIC()
-{
-	set_table_name( "P_PLAY_QUEUE_MUSIC" );
-}
-
-BUTTON_QUEUE::BUTTON_QUEUE()
-: BASE( "BUTTON_QUEUE", this ),
-  time_stamp( this, "time_stamp" ),
-  seq( this, "seq" ),
-  mac_address( this, "mac_address", MAC_ADDRESS_LEN ),
-  ip_address( this, "ip_address", IP_ADDRESS_LEN ),
-  action( this, "action", ACTION_LEN ),
-  file( this, "file", FILE_LEN )
-{
-	//add_key( new Forkey( this, &mac_address, "USER", "button_mac_address" ) );
-}
-
-P_BUTTON_QUEUE::P_BUTTON_QUEUE()
-: BUTTON_QUEUE()
-{
-	set_table_name( "P_BUTTON_QUEUE" );
-}
-
-
-USERS_ACTION::USERS_ACTION()
-: BASE( "USERS_ACTIONS", this ),
-  username( this, "username", USER_NAME_LEN ),
-  button_mac_address( this, "button_mac_address", MAC_ADDRESS_LEN ),
-  home_directory( this, "home_directory" ),
-  button_press_event0( this, "button_press_event0", ACTION_LEN ),
-  button_press_event1( this, "button_press_event1", ACTION_LEN ),
-  button_press_event2( this, "button_press_event2", ACTION_LEN ),
-  button_press_event3( this, "button_press_event3", ACTION_LEN ),
-  button_press_event4( this, "button_press_event4", ACTION_LEN ),
-  play_chunk0( this, "play_chunk0", FILE_LEN ),
-  play_chunk1( this, "play_chunk1", FILE_LEN ),
-  play_chunk2( this, "play_chunk2", FILE_LEN ),
-  play_chunk3( this, "play_chunk3", FILE_LEN ),
-  play_chunk4( this, "play_chunk4", FILE_LEN )
-{
-	add_key( new Forkey( this, &username, "USERS", "username" ) );
-}
-
 CONFIG::CONFIG()
 : BASE( "CONFIG", this ),
   key( this, "key", CONFIG_KEY_LEN ),
@@ -129,34 +67,6 @@ CONFIG::CONFIG()
 
 }
 
-STATS::STATS()
-: BASE( "STATS", this ),
-  key( this, "key", CONFIG_KEY_LEN ),
-  value( this, "value", CONFIG_VALUE_LEN )
-{
-
-}
-
-
-PLAY_QUEUE_ANIMATION::PLAY_QUEUE_ANIMATION()
-  : PLAY_QUEUE_CHUNKS()
-{
-	set_table_name( "PLAY_QUEUE_ANIMATION" );
-}
-
-P_PLAY_QUEUE_ANIMATION::P_PLAY_QUEUE_ANIMATION()
-  : PLAY_QUEUE_ANIMATION()
-{
-	set_table_name( "P_PLAY_QUEUE_ANIMATION" );
-}
-
-SERMON::SERMON()
-: BASE( "SERMON", this ),
-  action( this, "action", SERMON_ACTION_LEN ),
-  reaction( this, "reaction", SERMON_REACTION_LEN )
-{
-
-}
 
 MAIL::MAIL()
 : BASE( "MAIL", this ),
@@ -285,21 +195,7 @@ std::string create_sql( bool add_drop_table )
 
   s += create_sql_statement( &config,					forkeys, add_drop_table );
   s += create_sql_statement( &mail,						forkeys, add_drop_table );
-/*
-  s += create_sql_statement( &play_queue_chunks, 		forkeys, add_drop_table );
-  s += create_sql_statement( &play_queue_music,  		forkeys, add_drop_table );
-  s += create_sql_statement( &play_queue_animation,		forkeys, add_drop_table );
-  s += create_sql_statement( &button_queue,				forkeys, add_drop_table );
-  s += create_sql_statement( &users_action,				forkeys, add_drop_table );
-    
-  s += create_sql_statement( &stats,					forkeys, add_drop_table );
-  s += create_sql_statement( &sermon,					forkeys, add_drop_table );
 
-  s += create_sql_statement( &p_play_queue_chunks, 		forkeys, add_drop_table );
-  s += create_sql_statement( &p_play_queue_music,		forkeys, add_drop_table );
-  s += create_sql_statement( &p_play_queue_animation,	forkeys, add_drop_table );
-  s += create_sql_statement( &p_button_queue,			forkeys, add_drop_table );
-*/
   // notwendige indexe anlegen
   for( unsigned i = 0; i < forkeys.size(); i++ )
 	{

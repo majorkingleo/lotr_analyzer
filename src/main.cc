@@ -101,11 +101,6 @@ static void insert_config( const std::string & key, const std::string & value, b
 	}
 }
 
-static void insert_stats( const std::string & key, const std::string & value )
-{
-	insert_TABLE<STATS>( "stats", key, value );
-}
-
 } // namespace
 
 static void insert_default_values()
