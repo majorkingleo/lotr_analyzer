@@ -25,11 +25,21 @@ bool MySqlDB::connect(  const char *hostname, const char* username, const char *
 {
     if( db )
     {
-		close();
-		db = mysql_init(0);
+		  close();
+		  db = mysql_init(0);
     }
 
-    return mysql_real_connect( C(db), hostname, username, passwd, 0, 0, 0, 0 );
+    if( !mysql_real_connect( C(db), hostname, username, passwd, 0, 0, 0, 0 ) ) {
+        CPPDEBUG( Tools::format( "mysql_real_connect failed: %s", mysql_error( C(db) ) ) );
+        return false;
+    }
+
+    if( mysql_set_character_set( C(db), "utf8" ) != 0 ) {
+        CPPDEBUG( Tools::format( "mysql_set_character_set failed: %s", mysql_error( C(db) ) ) );
+        return false;
+    }
+
+    return true;
 }
 
 bool MySqlDB::select_db( const char *db_name )
