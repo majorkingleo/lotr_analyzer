@@ -70,12 +70,12 @@ bool Grep4Data::grep( const MAIL & mail )
     }
 
     if( grep( Utf8Util::utf8toWString( mail.body_text_plain.data ) ) ) {
-        CPPDEBUG( Tools::format( "Found in body_text_plain: %s", mail.body_text_plain.data ) );
+        CPPDEBUG( "Found in body_text_plain" );
         return true;
     }
 
     if( grep( Utf8Util::utf8toWString( mail.body_text_html.data ) ) ) {
-        CPPDEBUG( Tools::format( "Found in body_text_html: %s", mail.body_text_html.data ) );
+        CPPDEBUG( "Found in body_text_html");
         return true;
     }
 

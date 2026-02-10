@@ -89,6 +89,7 @@ AC_CHECK_HEADERS([zstd.h], [have_zstd_header=yes], [have_zstd_header=no])
 AC_CHECK_LIB([zstd], [ZSTD_compress], [have_zstd_lib=yes], [have_zstd_lib=no])
 if test "x$have_zstd_header" = "xyes" && test "x$have_zstd_lib" = "xyes"; then
   AC_DEFINE([HAVE_LIBZSTD], [1], [Define if libzstd is available])
+  # AC_MSG_RESULT([yes])
 else  
   AC_MSG_ERROR([zstd library and headers are required])
 fi
@@ -105,7 +106,6 @@ LDFLAGS="$LDFLAGS -lmimetic"
 AC_LINK_IFELSE(
   [AC_LANG_PROGRAM([
     #include <mimetic/mimetic.h>
-    void foo(){ mimetic::MimeEntity e; }
   ])],
   [have_mimetic_lib=yes],
   [have_mimetic_lib=no]

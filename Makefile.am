@@ -13,6 +13,8 @@ lotr_analyzer_SOURCES=\
 		src/Grep4Data.cc \
 		src/qp.h \
 		src/qp.cc \
+		src/zstd_util.h \
+		src/zstd_util.cc \
 		tools_config.h
 		
 AM_CPPFLAGS = -I$(top_srcdir)/tools \
