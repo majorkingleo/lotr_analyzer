@@ -7,6 +7,7 @@
 #include <filesystem>
 #include <utf8_util.h>
 #include <mimetic/mimetic.h>
+#include "qp.h"
 
 using namespace std::chrono_literals;
 using namespace std::chrono;
@@ -46,7 +47,7 @@ void ImportMail::process()
 
                 const std::string imap_filename = std::filesystem::path(filename).filename().string();
                 if( m_imported_files.find( imap_filename ) != m_imported_files.end() ) {
-                    CPPDEBUG( Tools::format( "Mail file '%s' already imported, skipping", imap_filename ) );
+                    // CPPDEBUG( Tools::format( "Mail file '%s' already imported, skipping", imap_filename ) );
                     continue;
                 }
 
@@ -69,7 +70,7 @@ void ImportMail::process()
             }
         }
 
-        APP.db->commit();
+        APP.db->rollback();
 
         std::this_thread::sleep_for( std::chrono::milliseconds( 500 ) );
     }
@@ -85,7 +86,10 @@ MAIL ImportMail::read_mail_from_file( const std::string & filename )
     me.load( content.begin(), content.end() );
     mail.from.data      = me.header().field( "From" ).value();
     mail.to.data        = me.header().field( "To" ).value();
-    mail.subject.data   = me.header().field( "Subject" ).value();
+
+    std::string subject  = me.header().field( "Subject" ).value();
+    mail.subject.data   = decodeMimeSubject( subject );
+
     mail.imap_filename.data = std::filesystem::path(filename).filename().string();
 
     for( const auto & part : me.body().parts() ) {

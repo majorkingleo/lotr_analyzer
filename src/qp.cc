@@ -5,7 +5,8 @@
 #include <iomanip>
 
 // Decodes a Quoted-Printable string (e.g., =3A becomes :)
-std::string decodeQuotedPrintable(const std::string& input) {
+std::string decodeQuotedPrintable(const std::string& input) 
+{
     std::string decoded;
     for (size_t i = 0; i < input.length(); ++i) {
         if (input[i] == '=' && i + 2 < input.length()) {
@@ -25,12 +26,17 @@ std::string decodeQuotedPrintable(const std::string& input) {
 }
 
 // Parses the MIME encoded-word: =?charset?encoding?text?=
-std::string decodeMimeSubject(const std::string& subject) {
+std::string decodeMimeSubject(const std::string& subject) 
+{
     size_t startPos = subject.find("=?");
-    if (startPos == std::string::npos) return subject;
+    if (startPos == std::string::npos) {
+        return subject;
+    }
 
     size_t endPos = subject.find("?=", startPos);
-    if (endPos == std::string::npos) return subject;
+    if (endPos == std::string::npos) {
+        return subject;
+    }
 
     // Split the inner parts: charset?encoding?text
     std::string inner = subject.substr(startPos + 2, endPos - startPos - 2);
@@ -48,13 +54,4 @@ std::string decodeMimeSubject(const std::string& subject) {
     }
 
     return text;
-}
-
-int main() {
-    std::string rawSubject = "=?UTF-8?Q?Fwd=3A_Kinoprogramm_Graz_=2830=2E_J=C3=A4nner_-_5=2E_Febr?=";
-    
-    std::cout << "Raw: " << rawSubject << std::endl;
-    std::cout << "Decoded: " << decodeMimeSubject(rawSubject) << std::endl;
-
-    return 0;
 }
