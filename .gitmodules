@@ -1,6 +1,3 @@
 [submodule "cpputils"]
 	path = cpputils
 	url = https://github.com/majorkingleo/cpputils.git
-[submodule "src/zstdpp"]
-	path = src/zstdpp
-	url = https://github.com/andreiamatuni/zstdpp.git
