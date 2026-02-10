@@ -8,6 +8,9 @@
 #include <utf8_util.h>
 #include <mimetic/mimetic.h>
 #include "qp.h"
+#include <zstd.h>
+#include "zstdpp/zstdpp.hpp"
+#include <xml.h>
 
 using namespace std::chrono_literals;
 using namespace std::chrono;
@@ -78,12 +81,30 @@ void ImportMail::process()
 
 MAIL ImportMail::read_mail_from_file( const std::string & filename )
 {
-    File content( filename );
+    MimeEntity me{};
+
+    if( is_zstd_compressed( filename ) ) {
+        
+        std::string content;
+
+        if( !XML::read_file( filename, content ) ) {
+            throw std::runtime_error( Tools::format( "cannot read mail file '%s'", filename ) );
+        }
+        
+        const std::vector<uint8_t> decompressed_content = zstdpp::decompress( content );
+        const std::string_view decompressed_content_str( reinterpret_cast<const char*>(decompressed_content.data()), decompressed_content.size() );
+
+        me.load( decompressed_content_str.begin(), decompressed_content_str.end() );
+    } else {
+        File content( filename );
+        me.load( content.begin(), content.end() );
+    }
+
+    
 
     MAIL mail{};
-
-    MimeEntity me{};
-    me.load( content.begin(), content.end() );
+    
+    
     mail.from.data      = me.header().field( "From" ).value();
     mail.to.data        = me.header().field( "To" ).value();
 
@@ -158,4 +179,22 @@ void ImportMail::read_already_imported_files()
             m_imported_files.insert( filenames[i].imap_filename.data );
         }
     } // while( true )
+}
+
+bool ImportMail::is_zstd_compressed( const std::string & filename )
+{
+    std::ifstream file( filename, std::ios::binary );
+    if( !file ) {
+        throw std::runtime_error( Tools::format( "cannot open file '%s'", filename ) );
+    }
+
+    uint32_t file_magic;
+
+    file.read( reinterpret_cast<char*>(&file_magic), sizeof(file_magic) );
+
+    if( !file ) {
+        throw std::runtime_error( Tools::format( "cannot read from file '%s'", filename ) );
+    }
+
+    return file_magic == ZSTD_MAGICNUMBER;
 }

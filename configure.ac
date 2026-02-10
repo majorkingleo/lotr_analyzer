@@ -83,4 +83,16 @@ CXX_FLAGS_CHECK([-std=gnu++23])
 #AM_GNU_GETTEXT([external])
 #AM_CONDITIONAL([USE_NLS], [test "x${USE_NLS}" = "xyes"])
 
+# Check for libzstd (zstd.h and -lzstd)
+AC_MSG_CHECKING([for libzstd (zstd.h and -lzstd)])
+AC_CHECK_HEADERS([zstd.h], [have_zstd_header=yes], [have_zstd_header=no])
+AC_CHECK_LIB([zstd], [ZSTD_compress], [have_zstd_lib=yes], [have_zstd_lib=no])
+if test "x$have_zstd_header" = "xyes" && test "x$have_zstd_lib" = "xyes"; then
+  AC_DEFINE([HAVE_LIBZSTD], [1], [Define if libzstd is available])
+  AC_MSG_RESULT([yes])
+else
+  AC_MSG_RESULT([no])
+fi
+
+
 AC_OUTPUT
