@@ -89,9 +89,34 @@ AC_CHECK_HEADERS([zstd.h], [have_zstd_header=yes], [have_zstd_header=no])
 AC_CHECK_LIB([zstd], [ZSTD_compress], [have_zstd_lib=yes], [have_zstd_lib=no])
 if test "x$have_zstd_header" = "xyes" && test "x$have_zstd_lib" = "xyes"; then
   AC_DEFINE([HAVE_LIBZSTD], [1], [Define if libzstd is available])
-  AC_MSG_RESULT([yes])
+else  
+  AC_MSG_ERROR([zstd library and headers are required])
+fi
+
+
+# Check for mimetic library (header + link)
+AC_MSG_CHECKING([for mimetic (mimetic/mimetic.h and -lmimetic)])
+AC_CHECK_HEADERS([mimetic/mimetic.h], [have_mimetic_header=yes], [have_mimetic_header=no])
+
+# Try to link a tiny C++ program with -lmimetic to ensure the library is available
+AC_LANG_PUSH([C++])
+ac_saved_LDFLAGS="$LDFLAGS"
+LDFLAGS="$LDFLAGS -lmimetic"
+AC_LINK_IFELSE(
+  [AC_LANG_PROGRAM([
+    #include <mimetic/mimetic.h>
+    void foo(){ mimetic::MimeEntity e; }
+  ])],
+  [have_mimetic_lib=yes],
+  [have_mimetic_lib=no]
+)
+LDFLAGS="$ac_saved_LDFLAGS"
+AC_LANG_POP([C++])
+
+if test "x$have_mimetic_header" = "xyes" && test "x$have_mimetic_lib" = "xyes"; then
+  AC_DEFINE([HAVE_MIMETIC], [1], [Define if mimetic library is available])
 else
-  AC_MSG_RESULT([no])
+  AC_MSG_ERROR([mimetic library and headers are required])
 fi
 
 
