@@ -9,7 +9,6 @@
 #include <mimetic/mimetic.h>
 #include "qp.h"
 #include <zstd.h>
-#include "zstdpp/zstdpp.hpp"
 #include <xml.h>
 #include "zstd_util.h"
 
@@ -85,26 +84,6 @@ MAIL ImportMail::read_mail_from_file( const std::string & filename )
     MimeEntity me{};
 
     if( is_zstd_compressed( filename ) ) {
-        /*
-        std::string content;
-
-        if( !XML::read_file( filename, content ) ) {
-            throw std::runtime_error( Tools::format( "cannot read mail file '%s'", filename ) );
-        }
-        
-        const std::vector<uint8_t> decompressed_content = zstdpp::decompress( content );
-        const std::string_view decompressed_content_str( reinterpret_cast<const char*>(decompressed_content.data()), decompressed_content.size() );
-        */
-        /*
-        std::fstream file( filename, std::ios::binary );
-        std::size_t file_size = std::filesystem::file_size( filename );
-
-        std::vector<uint8_t> buffer(file_size);
-        file.read(reinterpret_cast<char*>(buffer.data()), file_size);
-
-        const std::vector<uint8_t> decompressed_content = zstdpp::decompress( buffer );
-        const std::string_view decompressed_content_str( reinterpret_cast<const char*>(decompressed_content.data()), decompressed_content.size() );
-        */
 
         std::string decompressed_content_str = decompress_zstd_file_to_string( filename );
 
