@@ -1,5 +1,6 @@
 bin_PROGRAMS=\
-	lotr_analyzer
+	lotr_analyzer \
+	send_mail_example
 	
 lotr_analyzer_SOURCES=\
 		src/main.cc \
@@ -15,7 +16,14 @@ lotr_analyzer_SOURCES=\
 		src/qp.cc \
 		src/zstd_util.h \
 		src/zstd_util.cc \
+		src/MailSender.h \
+		src/MailSender.cc \
 		tools_config.h
+
+send_mail_example_SOURCES=\
+		send_mail_example/send_mail_example.cc \
+		send_mail_example/MailSender.h \
+		send_mail_example/MailSender.cc
 		
 AM_CPPFLAGS = -I$(top_srcdir)/tools \
 	-I$(top_srcdir)/cpputils/cpputilsshared  \
