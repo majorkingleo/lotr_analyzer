@@ -1,11 +1,14 @@
 = Rule1 =
-regex: `LOTR` => mailto: kingleo@borger.co.at
+regex: `LOTR`
+on match: kingleo@borger.co.at
 
-= Rule2 =
-match: `*LOTR*` => mailto: kingleo@borger.co.at
+= Rule 1 = 
+match: `*LOTR*`
+on match: kingleo@borger.co.at
 
-= Rule3 =
-regex: `Der Herr der Ringe` => mailto: kingleo@borger.co.at
+ = Rule 1 and 3 =
+regex: `Der Herr der Ringe`
+on match: kingleo@borger.co.at
 
 
 

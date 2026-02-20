@@ -1,6 +1,7 @@
 bin_PROGRAMS=\
 	lotr_analyzer \
-	send_mail_example
+	send_mail_example \
+	parse_rules
 	
 lotr_analyzer_SOURCES=\
 		src/main.cc \
@@ -18,6 +19,8 @@ lotr_analyzer_SOURCES=\
 		src/zstd_util.cc \
 		src/MailSender.h \
 		src/MailSender.cc \
+		src/ParseRules.h \
+		src/ParseRules.cc \
 		tools_config.h
 
 send_mail_example_SOURCES=\
@@ -25,6 +28,11 @@ send_mail_example_SOURCES=\
 		src/MailSender.h \
 		src/MailSender.cc
 		
+parse_rules_SOURCES=\
+		src/parse_rules_main.cc \
+		src/ParseRules.h \
+		src/ParseRules.cc
+
 AM_CPPFLAGS = -I$(top_srcdir)/tools \
 	-I$(top_srcdir)/cpputils/cpputilsshared  \
 	-I$(top_srcdir)/cpputils/cpputilsshared/cpputilsformat \
@@ -152,6 +160,17 @@ lotr_analyzer_LDADD = \
 	-lmimetic
 
 send_mail_example_LDADD = \
+	common/libcommon.a \
+	config/libconfig.a \
+	db/libdb.a \
+	cpputils/io/libcpputilsio.a \
+	cpputils/cpputilsshared/libcpputilsshared.a \
+	cpputils/cpputilsshared/cpputilsformat/libcpputilsformat.a \
+	$(MYSQLCLIENT_LIBS) \
+	-lzstd \
+	-lmimetic
+
+parse_rules_LDADD = \
 	common/libcommon.a \
 	config/libconfig.a \
 	db/libdb.a \
