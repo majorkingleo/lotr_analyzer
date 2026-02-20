@@ -19,14 +19,12 @@ echo "  Container: $CONTAINER_NAME"
 echo "  Local directory: $CURRENT_DIR"
 echo "  Container mount: /workspace"
 
-echo "cmd: ${@}"
-
-echo "
+#echo "cmd: ${@}"
 docker run --rm \
   --name "$CONTAINER_NAME" \
   -v "$CURRENT_DIR:/workspace" \
   -w /workspace \
-  /bin/bash
-"
+  "$IMAGE_NAME" \
+  /bin/bash -c "$*"
 
 echo "Container execution completed."
