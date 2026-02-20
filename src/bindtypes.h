@@ -169,6 +169,7 @@ public:
 	DBTypeInt 			checked;
 	DBTypeInt 			found;
 	DBTypeInt 			mailed;
+	DBTypeVarChar		mailto;
 
 public:
 	MAIL();

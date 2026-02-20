@@ -16,7 +16,7 @@ ParseRules::ParseRules( const std::string_view & rules_file )
 }
 
 
-std::vector<std::shared_ptr<ParseRules::Rule>> ParseRules::parse() 
+ParseRules::result_type ParseRules::parse() 
 {   
     std::wstring rules_content;
 
@@ -81,7 +81,10 @@ std::vector<std::shared_ptr<ParseRules::Rule>> ParseRules::parse()
             }
 
             if( match.size() > 2 ) {
+                
                 current_rule->match = strip( match[2].str() );
+                current_rule->match = strip( current_rule->match, L"`" );
+
             } else {
                 CPPDEBUG( Tools::wformat( L"Invalid rule regex at line: %s", i + 1) );
             }

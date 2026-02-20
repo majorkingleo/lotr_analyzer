@@ -6,6 +6,7 @@
 #include "ConfigGlobal.h"
 #include "ConfigDatabase.h"
 #include "ConfigMailImport.h"
+#include "ConfigRules.h"
 #include <filesystem>
 
 using namespace Tools;
@@ -48,7 +49,7 @@ void Configfile2::Section::createRealtiveOrAbsolutPathFor( const std::string & I
 
 Configfile2* Configfile2::instance = NULL;
 
-Configfile2* Configfile2::getIncance()
+Configfile2* Configfile2::getInstance()
 {
 	return instance;
 }
@@ -145,6 +146,7 @@ Configfile2* Configfile2::createDefaultInstaceWithAllModules( const std::string 
 	ConfigSectionGlobal::registerSection( instance );
 	ConfigSectionDatabase::registerSection( instance );
 	ConfigSectionMailImport::registerSection( instance );
+	ConfigSectionRules::registerSection( instance );
 
 	return instance;
 }

@@ -204,12 +204,12 @@ public:
 	}
 
 	template<typename T> static const T & get( const SectionKey<T> & key ) {
-		return getIncance()->at(key);
+		return getInstance()->at(key);
 	}
 
 	static std::string makePathsAbsolute(const std::string & sIn);
 
-	static Configfile2* getIncance();
+	static Configfile2* getInstance();
 	static Configfile2* createInstance( const std::string & config_file = "~/.UselessPope-Broker.ini" );
 	static Configfile2* createDefaultInstaceWithAllModules( const std::string & config_file = "~/.UselessPope-Broker.ini" );
 };

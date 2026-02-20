@@ -78,7 +78,8 @@ MAIL::MAIL()
   imap_filename( this, "imap_filename", FILE_LEN ),
   checked( this, "checked" ),
   found( this, "found" ),
-  mailed( this, "mailed" )
+  mailed( this, "mailed" ),
+  mailto( this, "mailto", USER_NAME_LEN )
 {
 
 }

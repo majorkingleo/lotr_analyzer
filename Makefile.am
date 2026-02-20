@@ -73,7 +73,9 @@ config_libconfig_a_SOURCES= \
 		config/ConfigDatabase.h \
 		config/ConfigDatabase.cc \
 		config/ConfigMailImport.h \
-		config/ConfigMailImport.cc	
+		config/ConfigMailImport.cc \
+		config/ConfigRules.h \
+		config/ConfigRules.cc
 
 cpputils_io_libcpputilsio_a_SOURCES= \
 	cpputils/io/ColoredOutput.h \
