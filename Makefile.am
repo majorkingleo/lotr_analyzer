@@ -21,6 +21,8 @@ lotr_analyzer_SOURCES=\
 		src/MailSender.cc \
 		src/ParseRules.h \
 		src/ParseRules.cc \
+		src/SendMail.h \
+		src/SendMail.cc \
 		tools_config.h
 
 send_mail_example_SOURCES=\
@@ -75,7 +77,9 @@ config_libconfig_a_SOURCES= \
 		config/ConfigMailImport.h \
 		config/ConfigMailImport.cc \
 		config/ConfigRules.h \
-		config/ConfigRules.cc
+		config/ConfigRules.cc \
+		config/ConfigSendMail.h \
+		config/ConfigSendMail.cc
 
 cpputils_io_libcpputilsio_a_SOURCES= \
 	cpputils/io/ColoredOutput.h \

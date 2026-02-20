@@ -7,6 +7,7 @@
 #include "ConfigDatabase.h"
 #include "ConfigMailImport.h"
 #include "ConfigRules.h"
+#include "ConfigSendMail.h"
 #include <filesystem>
 
 using namespace Tools;
@@ -146,6 +147,7 @@ Configfile2* Configfile2::createDefaultInstaceWithAllModules( const std::string 
 	ConfigSectionGlobal::registerSection( instance );
 	ConfigSectionDatabase::registerSection( instance );
 	ConfigSectionMailImport::registerSection( instance );
+	ConfigSectionSendMail::registerSection( instance );
 	ConfigSectionRules::registerSection( instance );
 
 	return instance;

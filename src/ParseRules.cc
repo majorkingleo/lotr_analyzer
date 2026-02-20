@@ -30,8 +30,8 @@ ParseRules::result_type ParseRules::parse()
 
     auto lines = split_string_view( rules_content, L"\n" );
 
-    std::vector<std::shared_ptr<Rule>> rules;
-    std::shared_ptr<Rule> current_rule;
+    result_type rules;
+    value_type  current_rule;
 
     for( unsigned int i = 0; i < lines.size(); ++i ) {
 
@@ -81,7 +81,7 @@ ParseRules::result_type ParseRules::parse()
             }
 
             if( match.size() > 2 ) {
-                
+
                 current_rule->match = strip( match[2].str() );
                 current_rule->match = strip( current_rule->match, L"`" );
 
@@ -107,8 +107,18 @@ ParseRules::result_type ParseRules::parse()
 
             continue;
         }
-
     }
 
-    return rules;
+    result_type res;
+
+    for( const auto & rule : rules ) {
+        if( rule->name.empty() || rule->match.empty() || rule->on_match.empty() ) {
+            CPPDEBUG( Tools::wformat( L"Skipping invalid rule: name='%s' match='%s' on_match='%s'", rule->name, rule->match, rule->on_match ) );
+            continue;
+        }
+
+        res.push_back( rule );
+    }
+
+    return res;
 }

@@ -29,19 +29,18 @@ void Grep4Data::run()
 
 void Grep4Data::process()
 {
-    MAIL filenames[100];
-    DBInLimit limit(100);
-    MAIL mail{};
-    int count = 0;
-
     while( !APP.quit_request ) {
 
         std::this_thread::sleep_for( std::chrono::seconds( 1 ) );
         APP.db->rollback();
 
+        MAIL filenames[100];
+        DBInLimit limit(100);
+        static const MAIL mail{};
+
         reload_rules_if_needed();
 
-        count = StdSqlSelect( *APP.db,
+        int count = StdSqlSelect( *APP.db,
     					Tools::format( "select %%%s from %s where %s = 0", 
                             mail.get_table_name(), 
                             mail.get_table_name(),
@@ -59,17 +58,17 @@ void Grep4Data::process()
         }
 
         for( int i = 0; i < count; i++ ) {
-            MAIL & mail = filenames[i];
-            mail.checked = 1;
+            MAIL & current_mail = filenames[i];
+            current_mail.checked = 1;
 
-            auto rule = grep( mail );
+            auto rule = grep( current_mail );
 
             if( rule ) {
-                mail.found = 1;
-                mail.mailto = Utf8Util::wStringToUtf8( rule->on_match );
+                current_mail.found = 1;
+                current_mail.mailto = Utf8Util::wStringToUtf8( rule->on_match );
             }
 
-            if( !StdSqlUpdate( *APP.db, mail, Tools::format( "where `%s` = '%d'", mail.idx.get_name(), mail.idx.data ) ) ) {
+            if( !StdSqlUpdate( *APP.db, current_mail, Tools::format( "where `%s` = '%d'", current_mail.idx.get_name(), current_mail.idx.data ) ) ) {
                 throw std::runtime_error( Tools::format( "SqlError: %s", APP.db->get_error() ) );
             }
             APP.db->commit();
@@ -105,7 +104,7 @@ const ParseRules::value_type Grep4Data::grep( const std::wstring_view & data )
             const std::wregex re( rule->match );
 
             if( std::regex_search( data.begin(), data.end(), re ) ) {
-                CPPDEBUG( Tools::wformat( L"Rule '%s' matched", rule->name ) );
+                CPPDEBUG( Tools::wformat( L"Rule '%s' (%s) matched", rule->name, rule->match ) );
                 return rule;
             }
         } catch( const std::exception & e ) {

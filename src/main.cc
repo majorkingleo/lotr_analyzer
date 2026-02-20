@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include "Grep4Data.h"
+#include "SendMail.h"
 
 using namespace Tools;
 using namespace std::chrono_literals;
@@ -298,6 +299,12 @@ int main( int argc, char **argv )
 			Grep4Data grep;
 			grep.run();			
 		});				
+
+		threads.emplace_back([]() {
+			auto token = APP.db.get_dispose_token();
+			SendMail send_mail;
+			send_mail.run();			
+		});		
 
 		for( auto & t : threads ) {
 			t.join();
