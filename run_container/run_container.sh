@@ -13,11 +13,11 @@ CONTAINER_NAME="lotr-analyzer-build"
 echo "Building Docker image..."
 docker build -t "$IMAGE_NAME" "$SCRIPT_DIR"
 
-echo "Running container with volume mapping..."
-echo "  Image: $IMAGE_NAME"
-echo "  Container: $CONTAINER_NAME"
-echo "  Local directory: $CURRENT_DIR"
-echo "  Container mount: /workspace"
+#echo "Running container with volume mapping..."
+#echo "  Image: $IMAGE_NAME"
+#echo "  Container: $CONTAINER_NAME"
+#echo "  Local directory: $CURRENT_DIR"
+#echo "  Container mount: /workspace"
 
 #echo "cmd: ${@}"
 docker run --rm \

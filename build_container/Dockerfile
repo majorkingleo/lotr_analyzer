@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:trixie
 RUN apt update -y 
 RUN apt-get --yes install g++ \
 	libzstd-dev \
@@ -8,8 +8,8 @@ RUN apt-get --yes install g++ \
 	pkg-config \
 	libboost1.88-all-dev \
 	default-libmysqlclient-dev \
-	git
-RUN apt-get --yes install make
+	git \
+	make
 
 CMD /bin/bash
 
