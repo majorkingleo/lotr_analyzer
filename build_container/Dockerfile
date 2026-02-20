@@ -1,11 +1,16 @@
 FROM debian:latest
 RUN apt update -y 
-RUN apt-get --yes --force-yes install g++ \
-	zstd \
-	mimetic \
+RUN apt-get --yes install g++ \
+	libzstd-dev \
+	libmimetic-dev \
 	autoconf \
-	autoconf \
-	archive
+	autoconf-archive \
+	pkg-config \
+	libboost1.88-all-dev \
+	default-libmysqlclient-dev \
+	git
+RUN apt-get --yes install make
+
 CMD /bin/bash
 
 
