@@ -5,6 +5,9 @@
 #include <sstream>
 #include <stdexcept>
 #include <iomanip>
+#include <CpputilsDebug.h>
+#include <format.h>
+#include <stderr_exception.h>
 
 using boost::asio::ip::tcp;
 
@@ -26,141 +29,202 @@ static std::string base64_encode(const std::string &in) {
     return out;
 }
 
-struct MailSender::Impl {
+class MailSender::Impl 
+{
     std::string host;
     unsigned short port;
     boost::asio::io_context ioc;
 
-    Impl(const std::string &h, unsigned short p) : host(h), port(p) {}
+public:
+    Impl(const std::string &h, unsigned short p) 
+    : host(h), 
+    port(p) 
+    {}
 
-    void expect_code(tcp::socket &sock, const std::string &expected_prefix) {
-        boost::asio::streambuf buf;
-        boost::asio::read_until(sock, buf, "\r\n");
-        std::istream is(&buf);
-        std::string line;
-        std::getline(is, line);
-        if (line.size() < expected_prefix.size() || line.substr(0,3) != expected_prefix) {
-            throw std::runtime_error("SMTP error: " + line);
-        }
-    }
-
-    std::string read_line(tcp::socket &sock) {
-        boost::asio::streambuf buf;
-        boost::asio::read_until(sock, buf, "\r\n");
-        std::istream is(&buf);
-        std::string line;
-        std::getline(is, line);
-        return line;
-    }
-
-    void send_cmd(tcp::socket &sock, const std::string &cmd) {
-        std::string tosend = cmd + "\r\n";
-        boost::asio::write(sock, boost::asio::buffer(tosend));
-    }
-
+public:
     void send_mail(const std::string &from,
                    const std::vector<std::string> &to,
                    const std::string &subject,
                    const std::string &body,
-                   const std::string &attachmentPath) {
-        tcp::resolver resolver(ioc);
-        auto endpoints = resolver.resolve(host, std::to_string(port));
-        tcp::socket sock(ioc);
-        boost::asio::connect(sock, endpoints);
+                   const std::string &attachmentPath);
 
-        // Server greeting
-        std::string line = read_line(sock);
-        if (line.size() < 3 || line.substr(0,3) != "220") throw std::runtime_error("Bad greeting: " + line);
+private:
+    void expect_code(tcp::socket &sock, const std::string &expected_prefix) 
+    {
+        boost::asio::streambuf buf;
+        boost::asio::read_until(sock, buf, "\r\n");
+        std::istream is(&buf);
+        std::string line;
+        std::getline(is, line);
 
-        // EHLO
-        send_cmd(sock, "EHLO localhost");
-        // read multiple EHLO lines (250-)
-        while (true) {
-            line = read_line(sock);
-            if (line.size() >= 3 && line.substr(0,3) == "250") {
-                if (line.size() > 3 && line[3] == ' ') break;
-                else continue;
-            } else {
-                throw std::runtime_error("EHLO failed: " + line);
-            }
+        if (line.size() < expected_prefix.size() || line.substr(0,3) != expected_prefix) {
+            throw STDERR_EXCEPTION("SMTP error: " + line);
         }
+    }
 
-        // MAIL FROM
-        send_cmd(sock, "MAIL FROM:<" + from + ">");
-        expect_code(sock, "250");
+    std::string read_line(tcp::socket &sock) 
+    {
+        boost::asio::streambuf buf;
+        boost::asio::read_until(sock, buf, "\r\n");
+        std::istream is(&buf);
+        std::string line;
+        std::getline(is, line);
 
-        // RCPT TO
-        for (const auto &r : to) {
-            send_cmd(sock, "RCPT TO:<" + r + ">");
-            expect_code(sock, "250");
-        }
+        CPPDEBUG( Tools::format( "R: %s", line ) );
+        return line;
+    }
 
-        // DATA
-        send_cmd(sock, "DATA");
-        expect_code(sock, "354");
-
-        // Build MIME message
-        std::string boundary = "----=_boundary_" + std::to_string(std::chrono::steady_clock::now().time_since_epoch().count());
-        std::ostringstream msg;
-        msg << "From: " << from << "\r\n";
-        msg << "To: ";
-        for (size_t i=0;i<to.size();++i) { if (i) msg << ", "; msg << to[i]; }
-        msg << "\r\n";
-        msg << "Subject: " << subject << "\r\n";
-        msg << "MIME-Version: 1.0\r\n";
-        if (attachmentPath.empty()) {
-            msg << "Content-Type: text/plain; charset=utf-8\r\n";
-            msg << "\r\n";
-            msg << body << "\r\n";
-        } else {
-            msg << "Content-Type: multipart/mixed; boundary=" << boundary << "\r\n";
-            msg << "\r\n";
-            msg << "--" << boundary << "\r\n";
-            msg << "Content-Type: text/plain; charset=utf-8\r\n\r\n";
-            msg << body << "\r\n\r\n";
-
-            // Read attachment
-            std::ifstream ifs(attachmentPath, std::ios::binary);
-            if (!ifs) throw std::runtime_error("Cannot open attachment: " + attachmentPath);
-            std::ostringstream buf;
-            buf << ifs.rdbuf();
-            std::string data = buf.str();
-            std::string b64 = base64_encode(data);
-
-            // Guess filename
-            std::string fname;
-            auto pos = attachmentPath.find_last_of('/');
-            if (pos == std::string::npos) fname = attachmentPath; else fname = attachmentPath.substr(pos+1);
-
-            msg << "--" << boundary << "\r\n";
-            msg << "Content-Type: application/octet-stream; name=\"" << fname << "\"\r\n";
-            msg << "Content-Transfer-Encoding: base64\r\n";
-            msg << "Content-Disposition: attachment; filename=\"" << fname << "\"\r\n\r\n";
-
-            // Break base64 into 76-char lines per RFC
-            for (size_t i=0;i<b64.size(); i+=76) {
-                msg << b64.substr(i, 76) << "\r\n";
-            }
-            msg << "\r\n";
-            msg << "--" << boundary << "--\r\n";
-        }
-
-        // Terminate DATA with single dot on a line
-        msg << ".\r\n";
-
-        // Send message
-        std::string out = msg.str();
-        boost::asio::write(sock, boost::asio::buffer(out));
-
-        // Expect 250
-        expect_code(sock, "250");
-
-        // QUIT
-        send_cmd(sock, "QUIT");
-        // read goodbye
-        try { read_line(sock); } catch (...) {}
+    void send_cmd(tcp::socket &sock, const std::string &cmd) 
+    {
+        std::string tosend = cmd + "\r\n";
+        CPPDEBUG( Tools::format( "S: %s", cmd ) );
+        boost::asio::write(sock, boost::asio::buffer(tosend));
     }
 };
+
+
+void MailSender::Impl::send_mail(const std::string &from,
+                const std::vector<std::string> &to,
+                const std::string &subject,
+                const std::string &body,
+                const std::string &attachmentPath) 
+{
+    tcp::resolver resolver(ioc);
+    auto endpoints = resolver.resolve(host, std::to_string(port));
+    tcp::socket sock(ioc);
+
+    CPPDEBUG( Tools::format( "Connecting to SMTP server %s:%d", host.c_str(), port ) );
+
+    boost::asio::connect(sock, endpoints);
+
+    CPPDEBUG( "connected to SMTP server" );
+
+    // Server greeting
+    std::string line = read_line(sock);
+    if (line.size() < 3 || line.substr(0,3) != "220") {
+        throw STDERR_EXCEPTION("Bad greeting: " + line);
+    }        
+
+    // EHLO
+    send_cmd(sock, "EHLO mail.borger.co.at");
+
+    // MAIL FROM
+    send_cmd(sock, "MAIL FROM:<" + from + ">");
+
+    // read multiple EHLO lines (250-)
+    while (true) {
+        line = read_line(sock);
+        if( line.starts_with("250-") ) {
+            CPPDEBUG( Tools::format( "EHLO line: %s", line ) );
+            continue;
+        }
+        else if( line.starts_with("250 ") ) {
+            CPPDEBUG( Tools::format( "EHLO last line: %s", line ) );
+            break;
+        } else {
+            throw STDERR_EXCEPTION("Unexpected EHLO response: " + line);
+        }
+    }
+
+    // RCPT TO
+    for (const auto &r : to) {
+        send_cmd(sock, "RCPT TO:<" + r + ">");
+        expect_code(sock, "250");
+    }
+
+    // DATA
+    send_cmd(sock, "DATA");
+    expect_code(sock, "354");
+
+    // Build MIME message
+    std::string boundary = "----=_boundary_" + std::to_string(std::chrono::steady_clock::now().time_since_epoch().count());
+    std::ostringstream msg;
+    msg << "From: " << from << "\r\n";
+
+    msg << "To: ";
+
+    for (size_t i=0;i<to.size();++i) { 
+        if (i) {
+            msg << ", "; 
+        }
+        msg << to[i]; 
+    }
+
+    msg << "\r\n";
+
+
+    msg << "Subject: " << subject << "\r\n";
+    msg << "MIME-Version: 1.0\r\n";
+
+    if (attachmentPath.empty()) {
+        msg << "Content-Type: text/plain; charset=utf-8\r\n";
+        msg << "\r\n";
+        msg << body << "\r\n";
+    } else {
+        msg << "Content-Type: multipart/mixed; boundary=" << boundary << "\r\n";
+        msg << "\r\n";
+        msg << "--" << boundary << "\r\n";
+        msg << "Content-Type: text/plain; charset=utf-8\r\n\r\n";
+        msg << body << "\r\n\r\n";
+
+        // Read attachment
+        std::ifstream ifs(attachmentPath, std::ios::binary);
+
+        if (!ifs) {
+            throw std::runtime_error("Cannot open attachment: " + attachmentPath);
+        }
+
+        std::ostringstream buf;
+        buf << ifs.rdbuf();
+        std::string data = buf.str();
+        std::string b64 = base64_encode(data);
+
+        // Guess filename
+        std::string fname;
+        auto pos = attachmentPath.find_last_of('/');
+
+        if (pos == std::string::npos) {
+            fname = attachmentPath;
+            } else {
+            fname = attachmentPath.substr(pos+1);
+            }
+
+        msg << "--" << boundary << "\r\n";
+        msg << "Content-Type: application/octet-stream; name=\"" << fname << "\"\r\n";
+        msg << "Content-Transfer-Encoding: base64\r\n";
+        msg << "Content-Disposition: attachment; filename=\"" << fname << "\"\r\n\r\n";
+
+        // Break base64 into 76-char lines per RFC
+        for (size_t i=0;i<b64.size(); i+=76) {
+            msg << b64.substr(i, 76) << "\r\n";
+        }
+        msg << "\r\n";
+
+        msg << "--" << boundary << "--\r\n";
+    }
+
+    // Terminate DATA with single dot on a line
+    msg << ".\r\n";
+
+    // Send message
+    std::string out = msg.str();
+    CPPDEBUG( Tools::format( "Sending mail:\n%s", out ) );
+    boost::asio::write(sock, boost::asio::buffer(out));
+
+    // Expect 250
+    expect_code(sock, "250");
+
+    // QUIT
+    send_cmd(sock, "QUIT");
+    // read goodbye
+    try { 
+        read_line(sock); 
+    } 
+    catch (...) 
+    {
+        CPPDEBUG( "Error reading QUIT response, ignoring" );
+    }
+}
 
 MailSender::MailSender(const std::string &host, unsigned short port) {
     pimpl = new Impl(host, port);
@@ -174,6 +238,7 @@ void MailSender::send(const std::string &from,
                       const std::vector<std::string> &to,
                       const std::string &subject,
                       const std::string &body,
-                      const std::string &attachmentPath) {
+                      const std::string &attachmentPath) 
+                      {
     pimpl->send_mail(from, to, subject, body, attachmentPath);
 }

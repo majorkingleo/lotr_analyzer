@@ -10,6 +10,7 @@ public:
     // from: sender email, to: list of recipient emails, subject, body (plain text), attachment file path (optional)
     // Throws std::runtime_error on error
     MailSender(const std::string &host = "localhost", unsigned short port = 25);
+    MailSender( const MailSender& ) = delete;
     ~MailSender();
 
     void send(const std::string &from,

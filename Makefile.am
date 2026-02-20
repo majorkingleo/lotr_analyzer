@@ -21,9 +21,9 @@ lotr_analyzer_SOURCES=\
 		tools_config.h
 
 send_mail_example_SOURCES=\
-		send_mail_example/send_mail_example.cc \
-		send_mail_example/MailSender.h \
-		send_mail_example/MailSender.cc
+		src/send_mail_example.cc \
+		src/MailSender.h \
+		src/MailSender.cc
 		
 AM_CPPFLAGS = -I$(top_srcdir)/tools \
 	-I$(top_srcdir)/cpputils/cpputilsshared  \
@@ -141,6 +141,17 @@ common_libcommon_a_SOURCES=\
 	common/ColBuilder.cc
 
 lotr_analyzer_LDADD = \
+	common/libcommon.a \
+	config/libconfig.a \
+	db/libdb.a \
+	cpputils/io/libcpputilsio.a \
+	cpputils/cpputilsshared/libcpputilsshared.a \
+	cpputils/cpputilsshared/cpputilsformat/libcpputilsformat.a \
+	$(MYSQLCLIENT_LIBS) \
+	-lzstd \
+	-lmimetic
+
+send_mail_example_LDADD = \
 	common/libcommon.a \
 	config/libconfig.a \
 	db/libdb.a \
