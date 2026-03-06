@@ -117,7 +117,7 @@ static std::string create_sql_statement( DBBindType *table, std::vector< Ref<For
 		  break;
 
 		case DBType::TYPE::VARCHAR:
-		  s += Tools::format("VARCHAR(%s) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT ''", tl[i]->get_size() );
+		  s += Tools::format("VARCHAR(%s) CHARACTER SET utf8 COLLATE utf8mb4_general_ci DEFAULT ''", tl[i]->get_size() );
 		  break;
 
 		case DBType::TYPE::ENUM:
@@ -137,7 +137,7 @@ static std::string create_sql_statement( DBBindType *table, std::vector< Ref<For
 				  }			  
 			  }
 			
-			s += " ) CHARACTER SET utf8 COLLATE utf8_general_ci ";
+			s += " ) CHARACTER SET utf8 COLLATE utf8mb4_general_ci ";
 		  }
 		  break;
 
@@ -174,7 +174,7 @@ static std::string create_sql_statement( DBBindType *table, std::vector< Ref<For
   s += Tools::format("ALTER TABLE `%s` ADD PRIMARY KEY IF NOT EXISTS ( `idx` );\n",table->get_table());
   s += Tools::format("ALTER TABLE `%s` CHANGE `idx` `idx` INT( 11 ) NOT NULL AUTO_INCREMENT;\n",
 			  table->get_table());
-  s += Tools::format("ALTER TABLE `%s`  DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;\n",table->get_table());
+  s += Tools::format("ALTER TABLE `%s`  DEFAULT CHARACTER SET utf8 COLLATE utf8mb4_general_ci;\n",table->get_table());
 
   Forkeys *fk = dynamic_cast<Forkeys*>( table );
 
