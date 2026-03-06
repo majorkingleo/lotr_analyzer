@@ -34,7 +34,7 @@ bool MySqlDB::connect(  const char *hostname, const char* username, const char *
         return false;
     }
 
-    if( mysql_set_character_set( C(db), "utf8" ) != 0 ) {
+    if( mysql_set_character_set( C(db), "utf8mb4" ) != 0 ) {
         CPPDEBUG( Tools::format( "mysql_set_character_set failed: %s", mysql_error( C(db) ) ) );
         return false;
     }

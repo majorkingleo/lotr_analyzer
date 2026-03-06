@@ -62,7 +62,10 @@ void ImportMail::process()
                 mail.setHist( BASE::HIST_TYPE::HIST_LO );
 
                 if( !StdSqlInsert( *APP.db, mail ) ) {
-                    throw std::runtime_error( Tools::format( "cannot insert mail '%s' '%s'", filename, APP.db->get_error() ) );
+                    throw std::runtime_error( Tools::format( "cannot insert mail '%s' '%s' subject: '%s'", 
+							filename, 
+							APP.db->get_error(),
+							mail.subject.str() ) );
                 }
 
                 APP.db->commit();
