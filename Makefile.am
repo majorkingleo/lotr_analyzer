@@ -24,6 +24,8 @@ lotr_analyzer_SOURCES=\
 		src/ParseRules.cc \
 		src/SendMail.h \
 		src/SendMail.cc \
+		src/HtmlToText.h \
+		src/HtmlToText.cc \
 		tools_config.h
 
 send_mail_example_SOURCES=\
@@ -39,7 +41,9 @@ parse_rules_SOURCES=\
 HtmlToText_test_SOURCES=\
 		src/HtmlToText_test.cc \
 		src/HtmlToText.h \
-		src/HtmlToText.cc
+		src/HtmlToText.cc \
+		src/qp.h \
+		src/qp.cc
 
 AM_CPPFLAGS = -I$(top_srcdir)/tools \
 	-I$(top_srcdir)/cpputils/cpputilsshared  \

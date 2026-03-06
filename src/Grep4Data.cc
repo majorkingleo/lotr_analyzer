@@ -8,6 +8,7 @@
 #include <ConfigGlobal.h>
 #include <filesystem>
 #include <format>
+#include "HtmlToText.h"
 
 using namespace Tools;
 
@@ -86,6 +87,14 @@ const ParseRules::value_type Grep4Data::grep( const MAIL & mail )
 
     if( auto rule = grep( Utf8Util::utf8toWString( mail.body_text_plain.data ) ) ) {
         CPPDEBUG( Tools::format( "Found in body_text_plain: %s", mail.body_text_plain.data ) );
+        return rule;
+    }
+
+    const auto body_text_html = HtmlToText::convert_from_mail( Utf8Util::utf8toWString( mail.body_text_html.data ) );
+    CPPDEBUG( Tools::wformat( L"Converted body_text_html to plain text: %s", body_text_html ) );
+
+     if( auto rule = grep( body_text_html ) ) {
+        CPPDEBUG( Tools::format( "Found in body_text_html: %s", mail.body_text_html.data ) );
         return rule;
     }
 

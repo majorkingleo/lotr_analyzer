@@ -6,6 +6,8 @@
 #include <format.h>
 #include <codecvt>
 #include <locale>
+#include "qp.h"
+#include <utf8_util.h>
 
 using namespace Tools;
 
@@ -59,6 +61,7 @@ wchar_t HtmlToText::codePointToChar(unsigned int codePoint)
     return L'?';
 }
 
+#if 0
 std::wstring HtmlToText::decodeQuotedPrintable(const std::wstring& text)
 {
     std::string result;
@@ -89,7 +92,16 @@ std::wstring HtmlToText::decodeQuotedPrintable(const std::wstring& text)
     // Convert back to wstring
     return converter.from_bytes(result);
 }
+#else
 
+std::wstring HtmlToText::decodeQuotedPrintable(const std::wstring& text)
+{
+    std::string input = Utf8Util::wStringToUtf8(text);
+    std::string decoded = ::decodeQuotedPrintable(input);
+    return Utf8Util::utf8toWString(decoded);
+}
+
+#endif
 std::wstring HtmlToText::convert(const std::wstring& html)
 {
     std::wstring result = html;
