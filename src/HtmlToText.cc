@@ -67,9 +67,9 @@ std::wstring HtmlToText::convert(const std::wstring& html)
     std::wregex commentRegex(L"<!--.*?-->", std::regex::icase);
     result = std::regex_replace(result, commentRegex, L"");
     
-    // Remove all HTML tags
+    // Remove all HTML tags (replace with space to separate adjacent text)
     std::wregex tagRegex(L"<[^>]+>");
-    result = std::regex_replace(result, tagRegex, L"");
+    result = std::regex_replace(result, tagRegex, L" ");
     
     // Decode named entities (e.g., &nbsp; &lt; &gt; &amp;)
     std::wregex namedEntityRegex(L"&([a-zA-Z]+);");
