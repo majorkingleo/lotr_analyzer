@@ -7,7 +7,7 @@
 class ParseRules
 {
 public:
-    static constexpr const wchar_t* RULES_START_REGEX    = L"(^\\s*=\\s*)(.*?)(\\s*=\\s*$)";
+    static constexpr const wchar_t* RULES_START_REGEX    = L"(^\\s*#\\s*)(.*?)(\\s*$)";
     static constexpr const wchar_t* RULES_REGEX_REGEX    = L"(^\\s*regex\\s*:)(.*?)$";
     static constexpr const wchar_t* RULES_ON_MATCH_REGEX = L"(^\\s*on match\\s*:)(.*?)$";
     static constexpr const wchar_t* RULES_EMAIL_MD_REGEX = LR"EMAIL(\[([A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,})\]\(mailto:[^\)]*\))EMAIL";

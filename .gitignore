@@ -109,4 +109,5 @@ mymoc.sh
 
 lotr_analyzer*
 send_mail_example*
-parse_rules
+parse_rules*
+HtmlToText_test*
