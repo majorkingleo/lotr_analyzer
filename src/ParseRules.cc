@@ -24,9 +24,10 @@ ParseRules::result_type ParseRules::parse()
         throw STDERR_EXCEPTION( Tools::format( "Failed to read rules file: %s", READ_FILE.getError() ) );
     }
 
-    const std::wregex re_rules_start( RULES_START_REGEX, std::regex_constants::icase );
-    const std::wregex re_regex( RULES_REGEX_REGEX, std::regex_constants::icase );
-    const std::wregex re_on_match( RULES_ON_MATCH_REGEX, std::regex_constants::icase );
+    static const std::wregex re_rules_start( RULES_START_REGEX, std::regex_constants::icase );
+    static const std::wregex re_regex( RULES_REGEX_REGEX, std::regex_constants::icase );
+    static const std::wregex re_on_match( RULES_ON_MATCH_REGEX, std::regex_constants::icase );
+    static const std::wregex re_email_md( RULES_EMAIL_MD_REGEX, std::regex_constants::icase );
 
     auto lines = split_string_view( rules_content, L"\n" );
 
@@ -101,6 +102,22 @@ ParseRules::result_type ParseRules::parse()
 
             if( match.size() > 2 ) {
                 current_rule->on_match = strip( match[2].str() );
+
+                // extract email from on_match if it is in markdown format
+                // eg: [kingleo@borger.co.at](mailto:kingleo@borger.co.at)
+                std::wsmatch match2;
+                if( std::regex_search( current_rule->on_match, match2, re_email_md ) ) {
+                    CPPDEBUG( Tools::wformat( L"Found email in on_match at line: %s", i + 1) );
+
+                    for( unsigned int j = 0; j < match2.size(); ++j ) {
+                        CPPDEBUG( Tools::wformat( L"MatchMdEmail[%d]: '%s'", j,  match2[j].str() ) );
+                    }
+
+                    if( match2.size() > 1 ) {
+                        current_rule->on_match = strip( match2[1].str(), L"[]" );
+                    }
+                }
+
             } else {
                 CPPDEBUG( Tools::wformat( L"Invalid rule regex at line: %s", i + 1) );
             }
