@@ -15,6 +15,22 @@
 			"options": {
 				"cwd": "${workspaceFolder}"
 			}
+		},
+		{
+			"label": "build in container",
+			"type": "shell",
+			"command": "build_container/run_container.sh",
+			"args": [
+				"make",
+				"-j12"
+			],
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
 		}
 	]
 }

@@ -20,7 +20,7 @@ echo "  Local directory: $CURRENT_DIR"
 echo "  Container mount: /workspace"
 
 #echo "cmd: ${@}"
-docker run --rm \
+docker run --rm -t \
   --user $(id -u):$(id -g) \
   --name "$CONTAINER_NAME" \
   -v "$CURRENT_DIR:/workspace" \

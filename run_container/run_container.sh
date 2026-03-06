@@ -8,7 +8,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CURRENT_DIR="$(pwd)"
 IMAGE_NAME="lotr-analyzer-container"
-CONTAINER_NAME="lotr-analyzer-build"
+CONTAINER_NAME="lotr-analyzer-run"
 
 echo "Building Docker image..."
 docker build -t "$IMAGE_NAME" "$SCRIPT_DIR"
@@ -24,6 +24,8 @@ docker run --rm \
   --user $(id -u):$(id -g) \
   --name "$CONTAINER_NAME" \
   -v "$CURRENT_DIR:/workspace" \
+  -v "${HOME}/lotr_analyzer/:${HOME}" \
+  -v "/run/mysqld/:/run/mysqld" \
   -w /workspace \
   "$IMAGE_NAME" \
   /bin/bash -c "$*"
