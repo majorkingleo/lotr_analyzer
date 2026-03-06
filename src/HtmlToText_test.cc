@@ -18,12 +18,12 @@ int run_tests()
         std::wstring expected = L"Hello World";
         std::wstring result = HtmlToText::convert(input);
         if (result == expected) {
-            std::wcout << L"✓ Test 1 PASSED" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✓ Test 1 PASSED") << std::endl;
             passed++;
         } else {
-            std::wcout << L"✗ Test 1 FAILED" << std::endl;
-            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
-            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✗ Test 1 FAILED") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Expected: [") << Utf8Util::wStringToUtf8(expected) << Utf8Util::wStringToUtf8(L"]") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Got:      [") << Utf8Util::wStringToUtf8(result) << Utf8Util::wStringToUtf8(L"]") << std::endl;
             failed++;
         }
     }
@@ -34,12 +34,12 @@ int run_tests()
         std::wstring expected = L"Foo < Bar > Baz";
         std::wstring result = HtmlToText::convert(input);
         if (result == expected) {
-            std::wcout << L"✓ Test 2 PASSED" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✓ Test 2 PASSED") << std::endl;
             passed++;
         } else {
-            std::wcout << L"✗ Test 2 FAILED" << std::endl;
-            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
-            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✗ Test 2 FAILED") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Expected: [") << Utf8Util::wStringToUtf8(expected) << Utf8Util::wStringToUtf8(L"]") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Got:      [") << Utf8Util::wStringToUtf8(result) << Utf8Util::wStringToUtf8(L"]") << std::endl;
             failed++;
         }
     }
@@ -50,12 +50,12 @@ int run_tests()
         std::wstring expected = L"\u034F\u200C \u034F\u200C Test";
         std::wstring result = HtmlToText::convert(input);
         if (result == expected) {
-            std::wcout << L"✓ Test 3 PASSED" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✓ Test 3 PASSED") << std::endl;
             passed++;
         } else {
-            std::wcout << L"✗ Test 3 FAILED" << std::endl;
-            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
-            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✗ Test 3 FAILED") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Expected: [") << Utf8Util::wStringToUtf8(expected) << Utf8Util::wStringToUtf8(L"]") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Got:      [") << Utf8Util::wStringToUtf8(result) << Utf8Util::wStringToUtf8(L"]") << std::endl;
             failed++;
         }
     }
@@ -66,12 +66,12 @@ int run_tests()
         std::wstring expected = L"Real Content & More";
         std::wstring result = HtmlToText::convert(input);
         if (result == expected) {
-            std::wcout << L"✓ Test 4 PASSED" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✓ Test 4 PASSED") << std::endl;
             passed++;
         } else {
-            std::wcout << L"✗ Test 4 FAILED" << std::endl;
-            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
-            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✗ Test 4 FAILED") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Expected: [") << Utf8Util::wStringToUtf8(expected) << Utf8Util::wStringToUtf8(L"]") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Got:      [") << Utf8Util::wStringToUtf8(result) << Utf8Util::wStringToUtf8(L"]") << std::endl;
             failed++;
         }
     }
@@ -82,12 +82,12 @@ int run_tests()
         std::wstring expected = L"© 2026 ®";
         std::wstring result = HtmlToText::convert(input);
         if (result == expected) {
-            std::wcout << L"✓ Test 5 PASSED" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✓ Test 5 PASSED") << std::endl;
             passed++;
         } else {
-            std::wcout << L"✗ Test 5 FAILED" << std::endl;
-            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
-            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✗ Test 5 FAILED") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Expected: [") << Utf8Util::wStringToUtf8(expected) << Utf8Util::wStringToUtf8(L"]") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Got:      [") << Utf8Util::wStringToUtf8(result) << Utf8Util::wStringToUtf8(L"]") << std::endl;
             failed++;
         }
     }
@@ -98,12 +98,12 @@ int run_tests()
         std::wstring expected = L"Text More";
         std::wstring result = HtmlToText::convert(input);
         if (result == expected) {
-            std::wcout << L"✓ Test 6 PASSED" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✓ Test 6 PASSED") << std::endl;
             passed++;
         } else {
-            std::wcout << L"✗ Test 6 FAILED" << std::endl;
-            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
-            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✗ Test 6 FAILED") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Expected: [") << Utf8Util::wStringToUtf8(expected) << Utf8Util::wStringToUtf8(L"]") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Got:      [") << Utf8Util::wStringToUtf8(result) << Utf8Util::wStringToUtf8(L"]") << std::endl;
             failed++;
         }
     }
@@ -114,18 +114,18 @@ int run_tests()
         std::wstring expected = L"Für die Kinos";
         std::wstring result = HtmlToText::convert(input);
         if (result == expected) {
-            std::wcout << L"✓ Test 7 PASSED" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✓ Test 7 PASSED") << std::endl;
             passed++;
         } else {
-            std::wcout << L"✗ Test 7 FAILED" << std::endl;
-            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
-            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"✗ Test 7 FAILED") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Expected: [") << Utf8Util::wStringToUtf8(expected) << Utf8Util::wStringToUtf8(L"]") << std::endl;
+            std::cout << Utf8Util::wStringToUtf8(L"  Got:      [") << Utf8Util::wStringToUtf8(result) << Utf8Util::wStringToUtf8(L"]") << std::endl;
             failed++;
         }
     }
     
-    std::wcout << std::endl;
-    std::wcout << L"Results: " << passed << L" passed, " << failed << L" failed" << std::endl;
+    std::cout << std::endl;
+    std::cout << Utf8Util::wStringToUtf8(L"Results: ") << passed << Utf8Util::wStringToUtf8(L" passed, ") << failed << Utf8Util::wStringToUtf8(L" failed") << std::endl;
     
     return (failed == 0) ? 0 : 1;
 }
