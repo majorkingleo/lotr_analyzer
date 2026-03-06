@@ -193,6 +193,17 @@ parse_rules_LDADD = \
 	-lzstd \
 	-lmimetic
 
+HtmlToText_test_LDADD = \
+	common/libcommon.a \
+	config/libconfig.a \
+	db/libdb.a \
+	cpputils/io/libcpputilsio.a \
+	cpputils/cpputilsshared/libcpputilsshared.a \
+	cpputils/cpputilsshared/cpputilsformat/libcpputilsformat.a \
+	$(MYSQLCLIENT_LIBS) \
+	-lzstd \
+	-lmimetic
+
 LIBS=
     
 

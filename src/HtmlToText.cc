@@ -1,6 +1,13 @@
 #include "HtmlToText.h"
 #include <regex>
 #include <cctype>
+#include <string_utils.h>
+#include <CpputilsDebug.h>
+#include <format.h>
+#include <codecvt>
+#include <locale>
+
+using namespace Tools;
 
 // Named HTML entities map
 const std::unordered_map<std::wstring, wchar_t> HtmlToText::NAMED_ENTITIES = {
@@ -52,9 +59,43 @@ wchar_t HtmlToText::codePointToChar(unsigned int codePoint)
     return L'?';
 }
 
+std::wstring HtmlToText::decodeQuotedPrintable(const std::wstring& text)
+{
+    std::string result;
+    
+    // Convert wstring to UTF-8 string for byte processing
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    std::string input = converter.to_bytes(text);
+    
+    for (size_t i = 0; i < input.length(); ++i) {
+        if (input[i] == '=' && i + 2 < input.length()) {
+            // Try to decode =XX where XX is hex
+            char hex[3] = {input[i+1], input[i+2], '\0'};
+            char* endptr = nullptr;
+            unsigned long value = std::strtoul(hex, &endptr, 16);
+            
+            if (endptr == hex + 2 && value <= 0xFF) {
+                // Valid hex sequence
+                result.push_back(static_cast<char>(value));
+                i += 2;
+            } else {
+                result.push_back(input[i]);
+            }
+        } else {
+            result.push_back(input[i]);
+        }
+    }
+    
+    // Convert back to wstring
+    return converter.from_bytes(result);
+}
+
 std::wstring HtmlToText::convert(const std::wstring& html)
 {
     std::wstring result = html;
+    
+    // Decode quoted-printable encoding (e.g., F=C3=BCr -> Für)
+    result = decodeQuotedPrintable(result);
     
     // Remove script and style tags with content
     std::wregex scriptRegex(L"<script[^>]*>.*?</script>", std::regex::icase);
@@ -125,4 +166,24 @@ std::wstring HtmlToText::convert(const std::wstring& html)
     }
     
     return result;
+}
+
+
+std::wstring HtmlToText::convert_from_mail(const std::wstring& html)
+{
+    auto sl = split_string_view( html, L"\n" );
+ 
+    std::wstring combined;
+
+    for( unsigned int i = 0; i < sl.size(); ++i ) {
+        std::wstring_view line = sl[i];
+
+        if( line.ends_with( L"=" ) ) {
+            line.remove_suffix( 1 );
+        }
+
+        combined.append( line );
+    }
+    
+    return convert(combined);
 }

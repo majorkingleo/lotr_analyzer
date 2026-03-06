@@ -1,8 +1,13 @@
 #include <iostream>
 #include <cassert>
 #include "HtmlToText.h"
+#include <utf8_util.h>
+#include <read_file.h>
+#include <OutDebug.h>
 
-int main()
+using namespace Tools;
+
+int run_tests()
 {
     int passed = 0;
     int failed = 0;
@@ -103,8 +108,49 @@ int main()
         }
     }
     
+    // Test 7: Quoted-printable encoding (e.g., F=C3=BCr -> Für)
+    {
+        std::wstring input = L"F=C3=BCr die Kinos";
+        std::wstring expected = L"Für die Kinos";
+        std::wstring result = HtmlToText::convert(input);
+        if (result == expected) {
+            std::wcout << L"✓ Test 7 PASSED" << std::endl;
+            passed++;
+        } else {
+            std::wcout << L"✗ Test 7 FAILED" << std::endl;
+            std::wcout << L"  Expected: [" << expected << L"]" << std::endl;
+            std::wcout << L"  Got:      [" << result << L"]" << std::endl;
+            failed++;
+        }
+    }
+    
     std::wcout << std::endl;
     std::wcout << L"Results: " << passed << L" passed, " << failed << L" failed" << std::endl;
     
     return (failed == 0) ? 0 : 1;
+}
+
+
+int main( int argc, char* argv[] )
+{
+    Tools::x_debug = new OutDebug();
+
+    if( argc == 1 ) {
+        return run_tests();
+    }
+
+    if( argc > 1 ) {
+
+        std::wstring input;
+
+        if( !READ_FILE.read_file( argv[1], input ) ) {
+            std::cerr << "Failed to read file: " << READ_FILE.getError() << std::endl;
+            return 1;
+        }
+
+
+
+        std::wstring output = HtmlToText::convert_from_mail(input);
+        std::cout << Utf8Util::wStringToUtf8(output) << std::endl;
+    }
 }
