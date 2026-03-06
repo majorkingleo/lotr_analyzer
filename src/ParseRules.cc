@@ -75,7 +75,7 @@ ParseRules::result_type ParseRules::parse()
         }
 
         if( std::regex_search( line, match, re_regex ) ) {
-            CPPDEBUG( Tools::wformat( L"Found rule regex at line: %s", i + 1) );
+            CPPDEBUG( Tools::wformat( L"Found rule regex at line: %s: '%s'", i + 1, line ) );
 
             for( unsigned int j = 0; j < match.size(); ++j ) {
                 CPPDEBUG( Tools::wformat( L"Match[%d]: '%s'", j,  match[j].str() ) );

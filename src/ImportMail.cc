@@ -31,6 +31,7 @@ void ImportMail::run()
     } catch( const std::exception & e ) {
         CPPDEBUG( Tools::format( "Error in ImportMail thread: %s", e.what() ) );
         APP.db->rollback();
+        APP.quit_request = true;
     }
 }
 

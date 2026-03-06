@@ -27,6 +27,7 @@ void SendMail::run()
     } catch( const std::exception & e ) {
         CPPDEBUG( Tools::format( "Error in SendMail thread: %s", e.what() ) );
         APP.db->rollback();
+        APP.quit_request = true;
     }
 }
 
