@@ -1,7 +1,8 @@
 bin_PROGRAMS=\
 	lotr_analyzer \
 	send_mail_example \
-	parse_rules
+	parse_rules \
+	HtmlToText_test
 	
 lotr_analyzer_SOURCES=\
 		src/main.cc \
@@ -34,6 +35,11 @@ parse_rules_SOURCES=\
 		src/parse_rules_main.cc \
 		src/ParseRules.h \
 		src/ParseRules.cc
+
+HtmlToText_test_SOURCES=\
+		src/HtmlToText_test.cc \
+		src/HtmlToText.h \
+		src/HtmlToText.cc
 
 AM_CPPFLAGS = -I$(top_srcdir)/tools \
 	-I$(top_srcdir)/cpputils/cpputilsshared  \
