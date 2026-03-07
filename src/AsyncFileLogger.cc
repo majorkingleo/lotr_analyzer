@@ -35,7 +35,9 @@ void FileLogger::log()
 	for( const auto & m : all_messages ) {
 
 		const auto local_when = tz->to_local(std::chrono::utc_clock::to_sys( m.when ));
-		std::string timestamp = std::format( "{0:%Y}-{0:%m}-{0:%d} {0:%H}:{0:%M}:{0:%S}", local_when );
+		const auto local_ms_when = std::chrono::time_point_cast<std::chrono::milliseconds>(local_when);
+		
+		std::string timestamp = std::format( "{0:%Y}-{0:%m}-{0:%d} {0:%H}:{0:%M}:{0:%S}", local_ms_when );
 		m_file << "[" << timestamp << "] ";
 
 		std::string file_name = std::filesystem::path(m.file).filename().string();
