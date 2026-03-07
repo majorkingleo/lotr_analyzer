@@ -94,29 +94,39 @@ ParseRules::result_type ParseRules::parse()
         }
 
         if( std::regex_search( line, match, re_on_match ) ) {
-            CPPDEBUG( Tools::wformat( L"Found rule regex at line: %s", i + 1) );
-
+//            CPPDEBUG( Tools::wformat( L"Found rule regex at line: %s", i + 1) );
+/*
             for( unsigned int j = 0; j < match.size(); ++j ) {
                 CPPDEBUG( Tools::wformat( L"Match[%d]: '%s'", j,  match[j].str() ) );
             }
-
+*/
             if( match.size() > 2 ) {
                 current_rule->on_match = strip( match[2].str() );
 
-                // extract email from on_match if it is in markdown format
-                // eg: [kingleo@borger.co.at](mailto:kingleo@borger.co.at)
-                std::wsmatch match2;
-                if( std::regex_search( current_rule->on_match, match2, re_email_md ) ) {
-                    CPPDEBUG( Tools::wformat( L"Found email in on_match at line: %s", i + 1) );
+                auto emails = split_and_strip_simple( current_rule->on_match, L"," );
 
-                    for( unsigned int j = 0; j < match2.size(); ++j ) {
-                        CPPDEBUG( Tools::wformat( L"MatchMdEmail[%d]: '%s'", j,  match2[j].str() ) );
-                    }
+                for( auto & email : emails ) {
+                    //CPPDEBUG( Tools::wformat( L"Found email in on_match at line: %s: '%s'", i + 1, email ) );
 
-                    if( match2.size() > 1 ) {
-                        current_rule->on_match = strip( match2[1].str(), L"[]" );
+
+                    // extract email from on_match if it is in markdown format
+                    // eg: [kingleo@borger.co.at](mailto:kingleo@borger.co.at)
+                    std::wsmatch match2;
+                    if( std::regex_search( email, match2, re_email_md ) ) {
+  //                      CPPDEBUG( Tools::wformat( L"Found email in on_match at line: %s", i + 1) );
+/*
+                        for( unsigned int j = 0; j < match2.size(); ++j ) {
+                            CPPDEBUG( Tools::wformat( L"MatchMdEmail[%d]: '%s'", j,  match2[j].str() ) );
+                        }
+*/
+                        if( match2.size() > 1 ) {
+                            email = strip( match2[1].str(), L"[]" );
+                        }
                     }
-                }
+                } // for
+                              
+                current_rule->on_match = IterableToCommaSeparatedWString( emails );
+                CPPDEBUG( Tools::wformat( L"Rule on_match after email extraction at line: %s: '%s'", i + 1, current_rule->on_match ) );
 
             } else {
                 CPPDEBUG( Tools::wformat( L"Invalid rule regex at line: %s", i + 1) );
