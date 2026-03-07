@@ -16,6 +16,7 @@
 #include <signal.h>
 #include "Grep4Data.h"
 #include "SendMail.h"
+#include "AsyncOutDebug.h"
 
 using namespace Tools;
 using namespace std::chrono_literals;
@@ -213,10 +214,21 @@ int main( int argc, char **argv )
 			std::cout << arg.getHelp(5,20,30, console_width ) << std::endl;
 			return 0;
 		}
-
+	
+		auto log_frontend = new AsyncOut::Debug();
+		Tools::x_debug = log_frontend;
 
 		if( o_debug.getState() ) {
-			Tools::x_debug = new OutDebug();
+			std::thread( []( auto log_frontend ) {
+				AsyncOut::Logger backend; 
+				log_frontend->subscribe(&backend);
+	
+				while( true ) {
+					backend.log();
+					backend.wait();
+					//std::this_thread::sleep_for(200ms);
+				}
+			}, log_frontend ).detach();
 		}
 
 		if( o_create_sql.getState() ) {			

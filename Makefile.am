@@ -26,6 +26,8 @@ lotr_analyzer_SOURCES=\
 		src/SendMail.cc \
 		src/HtmlToText.h \
 		src/HtmlToText.cc \
+		src/AsyncOutDebug.cc \
+		src/AsyncOutDebug.h \
 		tools_config.h
 
 send_mail_example_SOURCES=\
