@@ -8,6 +8,7 @@
 #include <FastDelivery.h>
 #include <variant>
 #include <mutex>
+#include <semaphore>
 
 namespace AsyncOut {
 
@@ -23,18 +24,19 @@ struct Data
 
 class Logger : public Tools::FastDelivery::PublisherNode<Data>, public Tools::OutDebug
 {
-	std::list<value_type> messages;
-	std::mutex m_messages;
-	std::mutex m_worktodo;
+	std::list<value_type> 	messages;
+	std::mutex 				m_messages;
+	std::binary_semaphore 	m_worktodo{0};
 public:
 
 	// called async from Debug publisher.
 	void deliver( const value_type & msg );
 
-	void log();
+	virtual void log();
 
 	// wait for data
 	void wait();
+	void wait_for( std::chrono::steady_clock::duration timeout );	
 
 protected:
 	std::list<value_type> popAll();

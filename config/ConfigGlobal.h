@@ -7,8 +7,9 @@ class ConfigSectionGlobal : public Configfile2::Section
 public:
 	static Configfile2::SectionKey<ConfigSectionGlobal> KEY;
 
-protected:
+	CONFIG_SIMPLE_DECLARE_STR( LogFile );
 
+protected:	
 
 public:
 	ConfigSectionGlobal( const std::string & name_, Configfile2 *config_file_ );

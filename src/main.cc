@@ -7,6 +7,7 @@
 #include <filesystem>
 #include "Configfile2.h"
 #include "ConfigDatabase.h"
+#include "ConfigGlobal.h"
 #include "bindtypes.h"
 #include <dbi.h>
 #include <thread>
@@ -17,6 +18,7 @@
 #include "Grep4Data.h"
 #include "SendMail.h"
 #include "AsyncOutDebug.h"
+#include "AsyncFileLogger.h"
 
 using namespace Tools;
 using namespace std::chrono_literals;
@@ -215,8 +217,34 @@ int main( int argc, char **argv )
 			return 0;
 		}
 	
+		Configfile2::createDefaultInstaceWithAllModules("~/.lotr-analyzer.ini")->read(true);
+
 		auto log_frontend = new AsyncOut::Debug();
 		Tools::x_debug = log_frontend;
+
+		const ConfigSectionGlobal 	& cfg_global 		= Configfile2::get(ConfigSectionGlobal::KEY);	
+
+		if( !cfg_global.LogFile.value.empty() ) {
+			std::thread( [&cfg_global]( auto log_frontend ) {			
+
+				AsyncOut::FileLogger backend( cfg_global.LogFile.value ); 
+				log_frontend->subscribe(&backend);
+
+				const auto flush_interval = 3s;
+
+				auto next_flush = std::chrono::steady_clock::now() + flush_interval;
+
+				while( true ) {
+					backend.log();
+					backend.wait_for( std::chrono::milliseconds(200) );
+
+					if( std::chrono::steady_clock::now() > next_flush ) {
+						backend.flush();
+						next_flush = std::chrono::steady_clock::now() + flush_interval;
+					}
+				}
+			}, log_frontend ).detach();
+		}
 
 		if( o_debug.getState() ) {
 			std::thread( []( auto log_frontend ) {
@@ -235,8 +263,7 @@ int main( int argc, char **argv )
 			std::cout << create_sql( o_with_drop_table.getState() ) << std::endl;
 			return 0;
 		}
-
-		Configfile2::createDefaultInstaceWithAllModules("~/.lotr-analyzer.ini")->read(true);
+				
 		const ConfigSectionDatabase 	& cfg_db 			= Configfile2::get(ConfigSectionDatabase::KEY);
 	
 		std::chrono::steady_clock::time_point retry_logon_until{};

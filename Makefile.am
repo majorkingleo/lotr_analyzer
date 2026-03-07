@@ -28,6 +28,8 @@ lotr_analyzer_SOURCES=\
 		src/HtmlToText.cc \
 		src/AsyncOutDebug.cc \
 		src/AsyncOutDebug.h \
+		src/AsyncFileLogger.h \
+		src/AsyncFileLogger.cc \
 		tools_config.h
 
 send_mail_example_SOURCES=\

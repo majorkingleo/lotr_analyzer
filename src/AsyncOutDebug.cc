@@ -41,16 +41,19 @@ void AsyncOut::Logger::deliver( const value_type & msg )
 {
 	std::lock_guard<std::mutex> ml(m_messages);
 	messages.push_back( msg );
-	m_worktodo.unlock();
+	m_worktodo.release();
 }
 
 void AsyncOut::Logger::wait()
-{
-	if( m_worktodo.try_lock() ) {
-		// ok locked, now lock again
-	}
-	m_worktodo.lock();
+{	
+	m_worktodo.acquire();
 }
+
+void AsyncOut::Logger::wait_for( std::chrono::steady_clock::duration timeout )
+{	
+	m_worktodo.try_acquire_for(timeout);
+}
+
 
 std::list<AsyncOut::Logger::value_type> AsyncOut::Logger::popAll()
 {
