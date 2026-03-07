@@ -9,17 +9,19 @@
 #include <variant>
 #include <mutex>
 #include <semaphore>
+#include <chrono>
 
 namespace AsyncOut {
 
 struct Data
 {
-	const char *file;
-	unsigned line;
-	const char *function;
-	std::variant<std::string,std::wstring> message;
-	Tools::ColoredOutput::Color color;
-	std::wstring prefix;
+	const char 							   *file;
+	unsigned 								line;
+	const char 							   *function;
+	std::variant<std::string,std::wstring> 	message;
+	Tools::ColoredOutput::Color 			color;
+	std::wstring 							prefix;	
+	std::chrono::utc_clock::time_point 		when = std::chrono::utc_clock::now();
 };
 
 class Logger : public Tools::FastDelivery::PublisherNode<Data>, public Tools::OutDebug

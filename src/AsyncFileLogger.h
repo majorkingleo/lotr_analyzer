@@ -2,6 +2,7 @@
 
 #include "AsyncOutDebug.h"
 #include <fstream>
+#include <chrono>
 
 namespace AsyncOut {
 
@@ -9,7 +10,8 @@ class FileLogger : public AsyncOut::Logger
 {
     std::string                             m_filename;
     std::ofstream                           m_file;
-    std::mutex                              m_file_mutex;    
+    std::mutex                              m_file_mutex;
+    const std::chrono::time_zone*           tz = nullptr;
 
 public:
     FileLogger( const std::string & filename_ );

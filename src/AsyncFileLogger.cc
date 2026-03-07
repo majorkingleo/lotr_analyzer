@@ -2,6 +2,7 @@
 #include <stderr_exception.h>
 #include <utf8_util.h>
 #include <filesystem>
+#include <format>
 
 using namespace AsyncOut;
 using namespace Tools;
@@ -14,6 +15,15 @@ FileLogger::FileLogger( const std::string & filename_ )
     if( !m_file ) {
         throw STDERR_EXCEPTION( Tools::format( "cannot open log file '%s'", m_filename ) );
     }
+
+
+	if (auto env = getenv("TZ")) {
+		tz = std::chrono::locate_zone(env);
+	}
+
+	if (!tz) {
+		tz = std::chrono::current_zone();
+	}	
 }
 
 void FileLogger::log()
@@ -23,6 +33,10 @@ void FileLogger::log()
 	auto all_messages = popAll();
 
 	for( const auto & m : all_messages ) {
+
+		const auto local_when = tz->to_local(std::chrono::utc_clock::to_sys( m.when ));
+		std::string timestamp = std::format( "{0:%Y}-{0:%m}-{0:%d} {0:%H}:{0:%M}:{0:%S}", local_when );
+		m_file << "[" << timestamp << "] ";
 
 		std::string file_name = std::filesystem::path(m.file).filename().string();
 		m_file << file_name;
