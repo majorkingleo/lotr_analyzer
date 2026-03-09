@@ -30,6 +30,10 @@ lotr_analyzer_SOURCES=\
 		src/AsyncOutDebug.h \
 		src/AsyncFileLogger.h \
 		src/AsyncFileLogger.cc \
+		src/ReadMailFromFile.h \
+		src/ReadMailFromFile.cc \
+		src/CheckSingleMail.h \
+		src/CheckSingleMail.cc \
 		tools_config.h
 
 send_mail_example_SOURCES=\

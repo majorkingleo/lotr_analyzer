@@ -19,6 +19,7 @@
 #include "SendMail.h"
 #include "AsyncOutDebug.h"
 #include "AsyncFileLogger.h"
+#include "CheckSingleMail.h"
 
 using namespace Tools;
 using namespace std::chrono_literals;
@@ -171,7 +172,7 @@ int main( int argc, char **argv )
 		Arg::FlagOption o_debug("debug");
 		o_debug.setDescription("print debugging messages");
 		o_debug.setRequired(false);
-		oc_main.addOptionR( &o_debug );
+		arg.addOptionR( &o_debug );
 
 		Arg::FlagOption o_create_sql("create-sql");
 		o_create_sql.setDescription("print create sql script");
@@ -183,6 +184,19 @@ int main( int argc, char **argv )
 		o_with_drop_table.setRequired(false);
 		oc_main.addOptionR( &o_with_drop_table );
 
+
+		Arg::OptionChain oc_test;
+		arg.addChainR( &oc_test );
+		oc_test.setMinMatch( 0 );
+		oc_test.setContinueOnMatch( true );
+		oc_test.setContinueOnFail( true );
+
+
+		Arg::StringOption o_test( "test" );
+		o_test.setDescription( "read mail and test" );
+		o_test.setRequired( false );
+		o_test.setMinValues( 1 );
+		oc_test.addOptionR( &o_test );
 
 		/*
 		Arg::StringOption o_enqueue_animation("enqueue-animation");
@@ -215,7 +229,7 @@ int main( int argc, char **argv )
 			usage(argv[0]);
 			std::cout << arg.getHelp(5,20,30, console_width ) << std::endl;
 			return 0;
-		}
+		}		
 	
 		Configfile2::createDefaultInstaceWithAllModules("~/.lotr-analyzer.ini")->read(true);
 
@@ -225,42 +239,79 @@ int main( int argc, char **argv )
 		const ConfigSectionGlobal 	& cfg_global 		= Configfile2::get(ConfigSectionGlobal::KEY);	
 
 		if( !cfg_global.LogFile.value.empty() ) {
-			std::thread( [&cfg_global]( auto log_frontend ) {			
+			std::thread( [&cfg_global,&co]( auto log_frontend ) {			
 
-				AsyncOut::FileLogger backend( cfg_global.LogFile.value ); 
-				log_frontend->subscribe(&backend);
+				auto wait_for_object = APP.get_wait_for_object_handle();
 
-				const auto flush_interval = 3s;
+				try {
 
-				auto next_flush = std::chrono::steady_clock::now() + flush_interval;
+					AsyncOut::FileLogger backend( cfg_global.LogFile.value ); 
+					log_frontend->subscribe(&backend);
 
-				while( true ) {
+					const auto flush_interval = 3s;
+
+					auto next_flush = std::chrono::steady_clock::now() + flush_interval;
+
+					do {
+						backend.log();
+						backend.wait_for( std::chrono::milliseconds(200) );
+
+						if( std::chrono::steady_clock::now() > next_flush ) {
+							backend.flush();
+							next_flush = std::chrono::steady_clock::now() + flush_interval;
+						}
+					} while( !APP.quit_request );
+
 					backend.log();
-					backend.wait_for( std::chrono::milliseconds(200) );
 
-					if( std::chrono::steady_clock::now() > next_flush ) {
-						backend.flush();
-						next_flush = std::chrono::steady_clock::now() + flush_interval;
-					}
+				} catch( std::exception & err ) {
+					std::cerr << co.bad("error in file logger thread: ") << err.what() << std::endl;
 				}
+
 			}, log_frontend ).detach();
 		}
 
 		if( o_debug.getState() ) {
-			std::thread( []( auto log_frontend ) {
-				AsyncOut::Logger backend; 
-				log_frontend->subscribe(&backend);
-	
-				while( true ) {
+			std::thread( [&co]( auto log_frontend ) {
+
+				auto wait_for_object = APP.get_wait_for_object_handle();
+
+				try {
+					AsyncOut::Logger backend; 
+					log_frontend->subscribe(&backend);
+		
+					do {
+						backend.log();
+						backend.wait_for( std::chrono::milliseconds(200) );
+						//std::this_thread::sleep_for(200ms);
+					} while( !APP.quit_request );
+
 					backend.log();
-					backend.wait();
-					//std::this_thread::sleep_for(200ms);
+
+				} catch( std::exception & err ) {
+					std::cerr << co.bad("error in debug logger thread: ") << err.what() << std::endl;
 				}
 			}, log_frontend ).detach();
 		}
 
 		if( o_create_sql.getState() ) {			
 			std::cout << create_sql( o_with_drop_table.getState() ) << std::endl;
+			return 0;
+		}
+
+		if( o_test.isSet() ) {
+
+			for( const auto & file : *o_test.getValues() ) {
+				CheckSingleMail import_mail( file );
+			}
+			
+			APP.quit_request = true;
+			std::this_thread::yield();		
+
+			while( APP.has_active_wait_for_objects() ) {
+				std::this_thread::sleep_for(100ms);
+			}
+
 			return 0;
 		}
 				
