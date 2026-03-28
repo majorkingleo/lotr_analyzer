@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# change to script directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCRIPT_DIR" || { echo "Failed to change directory to $SCRIPT_DIR"; exit 1; }
+
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
