@@ -10,4 +10,6 @@ public:
 
     //std::wstring get_header( const std::vector<std::wstring_view> & content_lines, const std::wstring & header_name );
     bool is_zstd_compressed( const std::string & filename );
+
+    std::string decodeBase64( const std::string & encoded );
 };

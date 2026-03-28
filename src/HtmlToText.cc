@@ -61,39 +61,6 @@ wchar_t HtmlToText::codePointToChar(unsigned int codePoint)
     return L'?';
 }
 
-#if 0
-std::wstring HtmlToText::decodeQuotedPrintable(const std::wstring& text)
-{
-    std::string result;
-    
-    // Convert wstring to UTF-8 string for byte processing
-    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
-    std::string input = converter.to_bytes(text);
-    
-    for (size_t i = 0; i < input.length(); ++i) {
-        if (input[i] == '=' && i + 2 < input.length()) {
-            // Try to decode =XX where XX is hex
-            char hex[3] = {input[i+1], input[i+2], '\0'};
-            char* endptr = nullptr;
-            unsigned long value = std::strtoul(hex, &endptr, 16);
-            
-            if (endptr == hex + 2 && value <= 0xFF) {
-                // Valid hex sequence
-                result.push_back(static_cast<char>(value));
-                i += 2;
-            } else {
-                result.push_back(input[i]);
-            }
-        } else {
-            result.push_back(input[i]);
-        }
-    }
-    
-    // Convert back to wstring
-    return converter.from_bytes(result);
-}
-#else
-
 std::wstring HtmlToText::decodeQuotedPrintable(const std::wstring& text)
 {
     std::string input = Utf8Util::wStringToUtf8(text);
@@ -101,13 +68,16 @@ std::wstring HtmlToText::decodeQuotedPrintable(const std::wstring& text)
     return Utf8Util::utf8toWString(decoded);
 }
 
-#endif
 std::wstring HtmlToText::convert(const std::wstring& html)
 {
     std::wstring result = html;
     
     // Decode quoted-printable encoding (e.g., F=C3=BCr -> Für)
-    result = decodeQuotedPrintable(result);
+    try {
+        result = decodeQuotedPrintable(result);
+    } catch (const std::exception & e) {
+        CPPDEBUG( Tools::format( "Failed to decode quoted-printable content: %s", e.what() ) );
+    }
     
     // Remove script and style tags with content
     std::wregex scriptRegex(L"<script[^>]*>.*?</script>", std::regex::icase);

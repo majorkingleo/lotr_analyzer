@@ -39,12 +39,25 @@ MAIL ReadMailFromFile::read_mail_from_file( const std::string & filename )
 
     for( const auto & part : me.body().parts() ) {
 
-        std::string content_type = part->header().contentType().str();        
+        const std::string content_type = part->header().contentType().str();
+        const std::string content_transfer_encoding = part->header().contentTransferEncoding().str();
 
-        CPPDEBUG( Tools::format( "processing part with content type '%s'", content_type ) );
+        CPPDEBUG( Tools::format( "processing part with content type '%s' encoding '%s'", 
+            content_type, content_transfer_encoding ) );
 
-        if( part->header().contentType().str().starts_with( "text/plain" ) ) {
+        if( part->header().contentType().str().starts_with( "text/plain" ) ) {            
             mail.body_text_plain.data = part->body();
+
+            if( content_transfer_encoding == "quoted-printable" ) {
+                try {
+                    mail.body_text_plain.data = decodeQuotedPrintable( mail.body_text_plain.data );
+                } catch( const std::exception & e ) {
+                    CPPDEBUG( Tools::format( "Failed to decode quoted-printable content: %s", e.what() ) );
+                }
+            } else if( content_transfer_encoding == "base64" ) {
+                mail.body_text_plain.data = decodeBase64( mail.body_text_plain.data );
+            }
+
             // CPPDEBUG( Tools::format( "found text/plain part in mail file '%s'", filename ) );
 
             // CPPDEBUG( Tools::format( "found text/plain part in mail file '%s'", filename ) );
@@ -56,6 +69,16 @@ MAIL ReadMailFromFile::read_mail_from_file( const std::string & filename )
             CPPDEBUG( Tools::format( "mail body: '%s'", part->body() ) );
             */
            mail.body_text_html.data = part->body();
+
+            if( content_transfer_encoding == "quoted-printable" ) {
+                try {
+                    mail.body_text_html.data = decodeQuotedPrintable( mail.body_text_html.data );
+                } catch( const std::exception & e ) {
+                    CPPDEBUG( Tools::format( "Failed to decode quoted-printable content: %s", e.what() ) );
+                }
+            } else if( content_transfer_encoding == "base64" ) {
+                mail.body_text_html.data = decodeBase64( mail.body_text_html.data );
+            }
         } 
     }
 
@@ -63,22 +86,7 @@ MAIL ReadMailFromFile::read_mail_from_file( const std::string & filename )
 
     return mail;
 }
-/*
-std::wstring ReadMailFromFile::get_header( const std::vector<std::wstring_view> & content_lines, const std::wstring & header_name )
-{
-    const std::wstring header_prefix = header_name + L": ";
 
-    for( const auto & line : content_lines ) {
-        if( line.starts_with( header_prefix ) ) {
-            return std::wstring( line.substr( header_prefix.size() ) );
-        }
-    }
-
-    throw std::runtime_error( Tools::format( "header '%s' not found in mail file", Utf8Util::wStringToUtf8( header_name ) ) );
-
-    return {};
-}
-*/
 
 bool ReadMailFromFile::is_zstd_compressed( const std::string & filename )
 {
@@ -96,4 +104,12 @@ bool ReadMailFromFile::is_zstd_compressed( const std::string & filename )
     }
 
     return file_magic == ZSTD_MAGICNUMBER;
+}
+
+std::string ReadMailFromFile::decodeBase64( const std::string & encoded )
+{
+    mimetic::Base64::Decoder decoder;
+    std::string decoded;
+    decoder.process( encoded.begin(), encoded.end(), std::back_inserter(decoded) );
+    return decoded;
 }
