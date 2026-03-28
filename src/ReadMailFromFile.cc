@@ -33,7 +33,9 @@ MAIL ReadMailFromFile::read_mail_from_file( const std::string & filename )
     mail.to.data        = me.header().field( "To" ).value();
 
     std::string subject  = me.header().field( "Subject" ).value();
+    CPPDEBUG( Tools::format( "raw subject: '%s'", subject ) );
     mail.subject.data   = decodeMimeSubject( subject );
+    CPPDEBUG( Tools::format( "decoded subject: '%s'", mail.subject.data ) );
 
     mail.imap_filename.data = std::filesystem::path(filename).filename().string();
 
