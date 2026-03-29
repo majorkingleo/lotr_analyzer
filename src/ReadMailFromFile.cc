@@ -6,6 +6,7 @@
 #include <filesystem>
 #include <CpputilsDebug.h>
 #include <utf8_util.h>
+#include "HtmlToText.h"
 
 using namespace mimetic;
 using namespace Tools;
@@ -33,9 +34,8 @@ MAIL ReadMailFromFile::read_mail_from_file( const std::string & filename )
     mail.to.data        = me.header().field( "To" ).value();
 
     std::string subject  = me.header().field( "Subject" ).value();
-    CPPDEBUG( Tools::format( "raw subject: '%s'", subject ) );
     mail.subject.data   = decodeMimeSubject( subject );
-    CPPDEBUG( Tools::format( "decoded subject: '%s'", mail.subject.data ) );
+    CPPDEBUG( Tools::format( "subject: '%s'", mail.subject.data ) );
 
     mail.imap_filename.data = std::filesystem::path(filename).filename().string();
 
@@ -81,7 +81,14 @@ MAIL ReadMailFromFile::read_mail_from_file( const std::string & filename )
             } else if( content_transfer_encoding == "base64" ) {
                 mail.body_text_html.data = decodeBase64( mail.body_text_html.data );
             }
-        } 
+        }
+
+        // repair html mail sent as text/plain with html content
+        if( mail.body_text_plain.data.find( "<span" ) != std::string::npos || 
+            mail.body_text_plain.data.find( "<div" ) != std::string::npos ) {
+            CPPDEBUG( Tools::format( "mail body text/plain contains html tags, cleaning up" ) );
+            mail.body_text_plain.data = Utf8Util::wStringToUtf8( HtmlToText::convert_from_mail( Utf8Util::utf8toWString( mail.body_text_plain.data ) ) );
+        }
     }
 
     CPPDEBUG( Tools::format( "mail from '%s' to '%s' subject '%s'", mail.from.data, mail.to.data, mail.subject.data ) );
