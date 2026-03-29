@@ -6,17 +6,45 @@
 #include <CpputilsDebug.h>
 #include <format.h>
 
+
+static bool is_hex_number( const std::string & str )
+{
+    for( char c : str ) {
+        if( !std::isxdigit( static_cast<unsigned char>(c) ) ) {
+            return false;
+        }
+    }
+    return true;
+}
+
 // Decodes a Quoted-Printable string (e.g., =3A becomes :)
 std::string decodeQuotedPrintable(const std::string& input) 
 {
     std::string decoded;
     for (size_t i = 0; i < input.length(); ++i) {
-        if (input[i] == '=' && i + 2 < input.length()) {
+        
+        if (input[i] == '=' && i + 1 < input.length() && input[i + 1] == '\n') {
+            // Soft line break, skip both characters
+            ++i; // Skip the newline character
+        } else if (input[i] == '=' && i + 1 < input.length() && input[i + 1] == '\r' && i + 2 < input.length() && input[i + 2] == '\n') {
+            // Soft line break with CRLF, skip all three characters
+            i += 2; // Skip the CR and LF characters
+            
+        } else if (input[i] == '=' && i + 2 < input.length()) {
             // Convert hex after '=' to char
             std::string hex = input.substr(i + 1, 2);
+
+            if( !is_hex_number( hex ) ) {
+                CPPDEBUG( Tools::format( "Invalid hex sequence '%s' in quoted-printable string: %s, aborting", hex, input ) );
+                return input; // Return original string if invalid hex sequence is found
+                // decoded += '=';
+                // continue;
+            }
+            
             char c = static_cast<char>(std::stoul(hex, nullptr, 16));
-            decoded += c;
+            decoded += c;            
             i += 2;
+
         } else if (input[i] == '_') {
             // RFC 2047 specific: underscores represent spaces
             decoded += ' ';
@@ -69,7 +97,6 @@ std::string decodeMimeSubject(const std::string& subject)
         }
 
         pos = endPos + 2;
-        CPPDEBUG( Tools::format( "pos: %zu", pos ) );
         decodedSubject += text;
     }
 
