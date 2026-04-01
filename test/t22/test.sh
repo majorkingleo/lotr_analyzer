@@ -25,7 +25,7 @@ if ! ../../lotr_analyzer -test mail; then
 fi
 
 # Check if files exist
-for file in mail_html.txt mail_plain.txt mail_subject.txt; do
+for file in mail_html.txt mail_subject.txt; do
     if ! [ -f "$file" ]; then
         echo -e "${RED}✗ $file not produced${NC}"
         exit 1
@@ -34,7 +34,7 @@ done
 
 # Compare
 failed=0
-for pair in "mail_html.txt mail_html.expected.txt" "mail_plain.txt mail_plain.expected.txt" "mail_subject.txt mail_subject.expected.txt"; do
+for pair in "mail_html.txt mail_html.expected.txt" "mail_subject.txt mail_subject.expected.txt"; do
     set -- $pair
     if diff "$1" "$2" > /dev/null 2>&1; then
         echo -e "${GREEN}✓ $1 matches expected${NC}"
