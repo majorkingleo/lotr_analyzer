@@ -2,6 +2,7 @@
 
 #include "read_file.h"
 #include "bindtypes.h"
+#include <mimetic/mimetic.h>
 
 class ReadMailFromFile
 {
@@ -12,4 +13,8 @@ public:
     bool is_zstd_compressed( const std::string & filename );
 
     std::string decodeBase64( const std::string & encoded );
+
+private:
+
+    void handle_mail_part( const mimetic::MimeEntity * part, MAIL & mail );
 };

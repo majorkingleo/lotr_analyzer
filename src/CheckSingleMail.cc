@@ -22,7 +22,7 @@ bool CheckSingleMail::read_mail( const std::string & filename )
 
     if( read_mail_from_file.is_zstd_compressed( filename ) ) {
         std::string decompressed_content_str = decompress_zstd_file_to_string( filename );
-        CPPDEBUG( Tools::format( "Decompressed content of mail file '%s':\n\n%s\n\n", filename, decompressed_content_str ) );
+        // CPPDEBUG( Tools::format( "Decompressed content of mail file '%s':\n\n%s\n\n", filename, decompressed_content_str ) );
     }
 
 
